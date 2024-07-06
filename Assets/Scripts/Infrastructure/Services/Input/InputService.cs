@@ -36,7 +36,6 @@ namespace Infrastructure.Services.Input
 		public void RegisterFireInputAction()
 		{
 			_fireAction = _input.Player.Fire;
-			Debug.Log(_fireAction);
 			_fireAction.performed += context => _isFireButtonPressed = context.performed;
 			_fireAction.canceled += context => _isFireButtonPressed = false;
 		}

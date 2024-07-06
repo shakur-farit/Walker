@@ -1,4 +1,5 @@
 using Character.Factory;
+using Infrastructure.States;
 using Infrastructure.States.StatesMachine;
 
 namespace Character

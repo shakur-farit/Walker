@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: AssetsReference
   m_EditorClassIdentifier: 
   CharacterAddress: Character
-  EnemyAddress: 
-  AmmoAddress: 
+  EnemyAddress: Enemy
+  AmmoAddress: Ammo
   DropAddress: 
   HudAddress: Hud
-  UIRootAddress: 
+  UIRootAddress: UIRoot
   MainMenuWindowAddress: 
   LevelCompleteWindowAddress: 
   GameOverWindowAddress: 

@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Infrastructure.FactoryBase
 {
-	public class Factory
+	public class FactoryBase
 	{
 		protected readonly IAssetsProvider AssetsProvider;
 		protected readonly IObjectCreatorService ObjectsCreator;
 
-		protected Factory(IAssetsProvider assetsProvider, IObjectCreatorService objectsCreator)
+		protected FactoryBase(IAssetsProvider assetsProvider, IObjectCreatorService objectsCreator)
 		{
 			AssetsProvider = assetsProvider;
 			ObjectsCreator = objectsCreator;

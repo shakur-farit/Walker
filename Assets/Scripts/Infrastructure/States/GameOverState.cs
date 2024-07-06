@@ -1,6 +1,4 @@
-using Infrastructure.States;
-
-namespace Character
+namespace Infrastructure.States
 {
 	public class GameOverState : IGameState
 	{

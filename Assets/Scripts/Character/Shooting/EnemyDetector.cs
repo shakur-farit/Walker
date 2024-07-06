@@ -1,36 +1,33 @@
+using System.Collections.Generic;
+using Enemy;
 using UnityEngine;
 
 namespace Character.Shooting
 {
 	public class EnemyDetector : MonoBehaviour
 	{
-		[SerializeField] private Shooter _shooter;
+		[SerializeField] private CharacterAimer _aimer;
 
-		//private IPersistentProgressService _persistentProgressService;
+		private Queue<EnemyHealth> _enemiesQueue;
 
-		//[Inject]
-		//public void Constructor(IPersistentProgressService persistentProgressService) => 
-		//	_persistentProgressService = persistentProgressService;
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.TryGetComponent(out EnemyHealth enemy)) 
+				AddToEnemiesInQueue(enemy);
+		}
 
-		//private void OnTriggerEnter2D(Collider2D other)
-		//{
-		//	if (other.TryGetComponent(out EnemyInitializer enemy))
-		//	{
-		//		AddToEnemiesInRangeList(enemy);
-		//		_shooter.TryToShoot();
-		//	}
-		//}
+		private void OnTriggerExit2D(Collider2D other)
+		{
+			if (other.TryGetComponent(out EnemyHealth enemy))
+				RemoveFromEnemiesInRangeList();
+		}
 
-		//private void OnTriggerExit2D(Collider2D other)
-		//{
-		//	if (other.TryGetComponent(out EnemyInitializer enemy))
-		//		RemoveFromEnemiesInRangeList(enemy);
-		//}
+		private void AddToEnemiesInQueue(EnemyHealth enemy) => 
+			_enemiesQueue.Enqueue(enemy);
 
-		//private void AddToEnemiesInRangeList(EnemyInitializer enemy) => 
-		//	_persistentProgressService.Progress.EnemyData.EnemiesInRangeList.Add(enemy.gameObject);
-
-		//private void RemoveFromEnemiesInRangeList(EnemyInitializer enemy) => 
-		//	_persistentProgressService.Progress.EnemyData.EnemiesInRangeList.Remove(enemy.gameObject);
+		private void RemoveFromEnemiesInRangeList()
+		{
+			
+		}
 	}
 }

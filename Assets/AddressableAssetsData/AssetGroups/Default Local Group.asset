@@ -29,6 +29,18 @@ MonoBehaviour:
     m_Address: AssetsReference
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 96788212a69d8d4478eb6a998a5070a4
+    m_Address: Enemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4cf60552fe7f09646abc23bd9d2b4a56
+    m_Address: Ammo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47feed293eaa31f43b8f6f704a2207f7
+    m_Address: UIRoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5eb0dc72952006346a567b67d061e7da, type: 2}
   m_SchemaSet:
