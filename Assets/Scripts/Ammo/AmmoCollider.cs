@@ -35,12 +35,11 @@ namespace Ammo
 
 		private void TryDealDamageToEnemy(Collider2D other)
 		{
-			Debug.Log(other.name);
-			if (other.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
+			if (other.gameObject.TryGetComponent(out IEnemyHealth enemyHealth))
 				DealDamageToEnemy(enemyHealth);
 		}
 
-		private void DealDamageToEnemy(EnemyHealth enemyHealth)
+		private void DealDamageToEnemy(IEnemyHealth enemyHealth)
 		{
 			enemyHealth.TakeDamage(_damage);
 			DestroyAmmo();

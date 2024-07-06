@@ -1,6 +1,10 @@
 using Ammo;
 using Ammo.Factory;
+using Character;
 using Character.Factory;
+using DropLogic;
+using DropLogic.Factory;
+using Enemy;
 using Enemy.Factory;
 using Hud.Factory;
 using Infrastructure.Services.AssetsManagement;
@@ -22,7 +26,7 @@ namespace Installers
 		{
 			RegisterServices();
 			RegisterFactories();
-			Container.BindInterfacesAndSelfTo<GameStatesMachine>().AsSingle();
+			RegisterGameStateMachine();
 		}
 
 		private void RegisterFactories()
@@ -33,6 +37,7 @@ namespace Installers
 			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
+			Container.Bind<IDropFactory>().To<DropFactory>().AsSingle();
 		}
 
 		private void RegisterServices()
@@ -45,6 +50,12 @@ namespace Installers
 			Container.Bind<IPersistentProgressService>().To<PersistentProgressService>().AsSingle();
 			Container.Bind<IRandomService>().To<RandomService>().AsSingle();
 			Container.Bind<IAmmoDeath>().To<AmmoDeath>().AsSingle();
+			Container.Bind<IEnemyDeath>().To<EnemyDeath>().AsSingle();
+			Container.Bind<ICharacterDeath>().To<CharacterDeath>().AsSingle();
+			Container.Bind<IDropDeath>().To<DropDeath>().AsSingle();
 		}
+
+		private void RegisterGameStateMachine() => 
+			Container.BindInterfacesAndSelfTo<GameStatesMachine>().AsSingle();
 	}
 }

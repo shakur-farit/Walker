@@ -1,12 +1,12 @@
+using System;
 using Cysharp.Threading.Tasks;
-using Infrastructure.Services.Health;
 using Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 using Zenject;
 
 namespace Character
 {
-	public class CharacterHealth : MonoBehaviour, IHealthAddable
+	public class CharacterHealth : MonoBehaviour, ICharacterHealth
 	{
 		private int _current;
 		private int _max;
@@ -23,29 +23,24 @@ namespace Character
 			_characterDeath = characterDeath;
 		}
 
-		//private void Awake() => 
-		//	SetupHealthDetails();
-
-		//private void SetupHealthDetails()
-		//{
-		//	CharacterStaticData currentCharacter = _persistentProgressService.Progress.CharacterData.CurrentCharacter;
-
-		//	_current = currentCharacter.StartHealth;
-		//	_max = currentCharacter.MaxHealth;
-		//	_damageTakingCooldown = currentCharacter.DamageTakingCooldown;
-
-		//	_canTakeDamage = true;
-		//}
+		private void Awake()
+		{
+			_current = 20;
+			_damageTakingCooldown = 1000;
+			_canTakeDamage = true;
+		}
 
 		public void TakeDamage(int damage)
 		{
-			if(_current <=0)
+			if (_current <=0)
 				return;
 
 			if(_canTakeDamage == false)
 				return;
 
 			_current -= damage;
+			Debug.Log($"Character Take {damage}");
+			Debug.Log(_current);
 
 			if (_current <= 0)
 			{

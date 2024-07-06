@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Ammo.Factory;
 using Cysharp.Threading.Tasks;
 using Infrastructure.Services.Input;
@@ -9,10 +8,12 @@ namespace Character.Shooting
 {
 	public class Shooter : MonoBehaviour
 	{
-		private bool _isShooted;
+		private bool _isShoot;
 
 		private IFireInputService _fireInputSystem;
 		private IAmmoFactory _ammoFactory;
+
+		public bool CanShoot { get; set; }
 
 		[Inject]
 		public void Constructor(IFireInputService fireInputSystem, IAmmoFactory ammoFactory)
@@ -32,15 +33,18 @@ namespace Character.Shooting
 
 		private async void TryToShoot()
 		{
-			if (_isShooted)
+			if(CanShoot == false)
 				return;
 
-			_isShooted = true;
+			if (_isShoot)
+				return;
+
+			_isShoot = true;
 
 			
 			await Shoot();
 
-			_isShooted = false;
+			_isShoot = false;
 		}
 
 		private async UniTask Shoot()
@@ -49,9 +53,7 @@ namespace Character.Shooting
 			await UniTask.Delay(1000);
 		}
 
-		private async Task CreateAmmo()
-		{
+		private async UniTask CreateAmmo() => 
 			await _ammoFactory.Create(transform);
-		}
 	}
 }

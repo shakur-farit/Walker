@@ -1,23 +1,35 @@
+using DropLogic;
 using UnityEngine;
-using Zenject;
 
 namespace Character
 {
 	public class CharacterDropPickuper : MonoBehaviour
 	{
 		[SerializeField] private CharacterHealth _health;
+		private IDropDeath _dropDeath;
 
+		public void Constructor(IDropDeath dropDeath) => 
+			_dropDeath = dropDeath;
 
-
-		public void PickupDrop(DropType dropType, int dropValue)
+		private void OnTriggerEnter(Collider other)
 		{
-			AddHealthToCharacter(dropType, dropValue);
+			if (other.TryGetComponent(out DropData dropData)) 
+				PickupDrop(dropData);
 		}
 
-		private void AddHealthToCharacter(DropType dropType, int dropValue)
+		public void PickupDrop(DropData dropData)
 		{
-			if (dropType == DropType.Heart)
-				_health.AddHealth(dropValue);
+			if (dropData.Type == DropType.Heart)
+				AddHealthToCharacter(dropData.Value);
+
+			Debug.Log("Pick");
+			DestroyDrop(dropData.gameObject);
 		}
+
+		private void AddHealthToCharacter(int dropValue) => 
+			_health.AddHealth(dropValue);
+
+		private void DestroyDrop(GameObject drop) => 
+			_dropDeath.Die(drop);
 	}
 }

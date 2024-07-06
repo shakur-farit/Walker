@@ -1,12 +1,31 @@
 using UnityEngine;
+using Zenject;
 
 namespace Enemy
 {
-	public class EnemyHealth : MonoBehaviour
+	public class EnemyHealth : MonoBehaviour, IEnemyHealth
 	{
+		private int _current;
+
+		private IEnemyDeath _enemyDeath;
+
+		[Inject]
+		public void Constructor(IEnemyDeath enemyDeath) => 
+			_enemyDeath = enemyDeath;
+
+		private void Awake() =>
+			_current = 10;
+
 		public void TakeDamage(int damage)
 		{
-			Debug.Log($"{gameObject.name} take {damage} damage");
+			if(_current <= 0)
+				return;
+
+			_current -= damage;
+			Debug.Log($"Enemy Take {damage}");
+
+			if ( _current <= 0 )
+				_enemyDeath.Die(gameObject);
 		}
 	}
 }
