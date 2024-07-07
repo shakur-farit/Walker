@@ -1,7 +1,7 @@
-using DropLogic.Factory;
+using Drop.Factory;
 using UnityEngine;
 
-namespace DropLogic
+namespace Drop
 {
 	public class DropDeath : IDropDeath
 	{

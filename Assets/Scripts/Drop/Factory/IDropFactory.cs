@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace DropLogic.Factory
+namespace Drop.Factory
 {
 	public interface IDropFactory
 	{

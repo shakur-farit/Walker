@@ -11,9 +11,9 @@ namespace Infrastructure.Services.AssetsManagement
 		public string DropAddress;
 		public string HudAddress;
 		public string UIRootAddress;
-		public string MainMenuWindowAddress;
+		public string InventoryWindowAddress;
+		public string ItemInformationWindowAddress;
 		public string LevelCompleteWindowAddress;
 		public string GameOverWindowAddress;
-		public string ShootSpecialEffetcAddress;
 	}
 }

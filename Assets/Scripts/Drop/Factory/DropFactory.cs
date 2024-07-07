@@ -5,7 +5,7 @@ using Infrastructure.Services.AssetsManagement;
 using Infrastructure.Services.ObjectCreator;
 using UnityEngine;
 
-namespace DropLogic.Factory
+namespace Drop.Factory
 {
 	public class DropFactory : FactoryBase, IDropFactory
 	{

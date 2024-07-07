@@ -2,8 +2,8 @@ using Ammo;
 using Ammo.Factory;
 using Character;
 using Character.Factory;
-using DropLogic;
-using DropLogic.Factory;
+using Drop;
+using Drop.Factory;
 using Enemy;
 using Enemy.Factory;
 using Hud.Factory;
@@ -16,6 +16,7 @@ using Infrastructure.Services.StaticData;
 using Infrastructure.States.Factory;
 using Infrastructure.States.StatesMachine;
 using UI.Factory;
+using UI.Services.Windows;
 using Zenject;
 
 namespace Installers
@@ -49,6 +50,7 @@ namespace Installers
 			Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
 			Container.Bind<IPersistentProgressService>().To<PersistentProgressService>().AsSingle();
 			Container.Bind<IRandomService>().To<RandomService>().AsSingle();
+			Container.Bind<IWindowsService>().To<WindowsService>().AsSingle();
 			Container.Bind<IAmmoDeath>().To<AmmoDeath>().AsSingle();
 			Container.Bind<IEnemyDeath>().To<EnemyDeath>().AsSingle();
 			Container.Bind<ICharacterDeath>().To<CharacterDeath>().AsSingle();

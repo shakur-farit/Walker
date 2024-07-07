@@ -1,5 +1,7 @@
-using DropLogic;
+using System;
+using Drop;
 using UnityEngine;
+using Zenject;
 
 namespace Character
 {
@@ -8,14 +10,9 @@ namespace Character
 		[SerializeField] private CharacterHealth _health;
 		private IDropDeath _dropDeath;
 
+		[Inject]
 		public void Constructor(IDropDeath dropDeath) => 
 			_dropDeath = dropDeath;
-
-		private void OnTriggerEnter(Collider other)
-		{
-			if (other.TryGetComponent(out DropData dropData)) 
-				PickupDrop(dropData);
-		}
 
 		public void PickupDrop(DropData dropData)
 		{

@@ -39,8 +39,6 @@ namespace Character
 				return;
 
 			_current -= damage;
-			Debug.Log($"Character Take {damage}");
-			Debug.Log(_current);
 
 			if (_current <= 0)
 			{

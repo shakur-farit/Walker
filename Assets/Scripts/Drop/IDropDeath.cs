@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DropLogic
+namespace Drop
 {
 	public interface IDropDeath
 	{

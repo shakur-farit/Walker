@@ -9,9 +9,10 @@ namespace UI.Factory
 	public class UIFactory : FactoryBase, IUIFactory
 	{
 		private GameObject _uiRoot;
-		private GameObject _mainMenuWindow;
 		private GameObject _levelCompleteWindow;
 		private GameObject _gameOverWindow;
+		private GameObject _inventoryWindow;
+		private GameObject _itemInformationWindow;
 
 		protected UIFactory(IAssetsProvider assetsProvider, IObjectCreatorService objectsCreator) : 
 			base(assetsProvider, objectsCreator)
@@ -24,10 +25,16 @@ namespace UI.Factory
 			_uiRoot = await CreateObject(reference.UIRootAddress);
 		}
 
-		public async UniTask CreateMainMenuWindow()
+		public async UniTask CreateInventoryWindow()
 		{
 			AssetsReference reference = await InitReference();
-			_mainMenuWindow = await CreateObject(reference.MainMenuWindowAddress, _uiRoot.transform);
+			_inventoryWindow = await CreateObject(reference.InventoryWindowAddress, _uiRoot.transform);
+		}
+
+		public async UniTask CreateItemInformationWindow()
+		{
+			AssetsReference reference = await InitReference();
+			_itemInformationWindow = await CreateObject(reference.ItemInformationWindowAddress, _uiRoot.transform);
 		}
 
 		public async UniTask CreateLevelCompleteWindow()
@@ -42,11 +49,11 @@ namespace UI.Factory
 			_gameOverWindow = await CreateObject(reference.GameOverWindowAddress, _uiRoot.transform);
 		}
 
-		public void DestroyUIRoot() => 
-			Object.Destroy(_uiRoot);
+		public void DestroyInventoryWindow() => 
+			Object.Destroy(_inventoryWindow);
 
-		public void DestroyMainMenuWindow() => 
-			Object.Destroy(_mainMenuWindow);
+		public void DestroyItemInformationWindow() => 
+			Object.Destroy(_itemInformationWindow);
 
 		public void DestroyLevelCompleteWindow() =>
 			Object.Destroy(_levelCompleteWindow);

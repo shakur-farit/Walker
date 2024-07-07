@@ -22,7 +22,6 @@ namespace Enemy
 				return;
 
 			_current -= damage;
-			Debug.Log($"Enemy Take {damage}");
 
 			if ( _current <= 0 )
 				_enemyDeath.Die(gameObject);

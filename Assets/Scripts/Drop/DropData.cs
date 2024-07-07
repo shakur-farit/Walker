@@ -1,9 +1,6 @@
-using Ammo.Factory;
-using Character;
 using UnityEngine;
-using Zenject;
 
-namespace DropLogic
+namespace Drop
 {
 	public class DropData : MonoBehaviour
 	{

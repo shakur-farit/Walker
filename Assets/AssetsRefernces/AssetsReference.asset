@@ -18,7 +18,7 @@ MonoBehaviour:
   DropAddress: Drop
   HudAddress: Hud
   UIRootAddress: UIRoot
-  MainMenuWindowAddress: 
+  InventoryWindowAddress: InventoryWindow
+  ItemInformationWindowAddress: 
   LevelCompleteWindowAddress: 
   GameOverWindowAddress: 
-  ShootSpecialEffetcAddress: 

@@ -1,4 +1,4 @@
-namespace Character
+namespace Drop
 {
 	public enum DropType
 	{

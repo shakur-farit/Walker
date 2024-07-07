@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 
 namespace UI.Factory
@@ -5,12 +6,13 @@ namespace UI.Factory
 	public interface IUIFactory
 	{
 		UniTask CreateUIRoot();
-		UniTask CreateMainMenuWindow();
+		UniTask CreateInventoryWindow();
+		UniTask CreateItemInformationWindow();
 		UniTask CreateLevelCompleteWindow();
 		UniTask CreateGameOverWindow();
 
-		void DestroyUIRoot();
-		void DestroyMainMenuWindow();
+		void DestroyInventoryWindow();
+		void DestroyItemInformationWindow();
 		void DestroyLevelCompleteWindow();
 		void DestroyGameOVerWindow();
 	}
