@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Infrastructure.Services.AssetsManagement
 {
@@ -12,6 +13,7 @@ namespace Infrastructure.Services.AssetsManagement
 		public string HudAddress;
 		public string UIRootAddress;
 		public string InventoryWindowAddress;
+		public string ItemCellAddress;
 		public string ItemInformationWindowAddress;
 		public string LevelCompleteWindowAddress;
 		public string GameOverWindowAddress;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UI.Services.Windows;
 using UI.Windows;
 using UnityEngine;
@@ -21,5 +22,10 @@ namespace Inventory
 
 		private void OpenItemInformationWindow() => 
 			_windowsService.Open(WindowType.ItemInformation);
+	}
+
+	public class Inventory
+	{
+		
 	}
 }

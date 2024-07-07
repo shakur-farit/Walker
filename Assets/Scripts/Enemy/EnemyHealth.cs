@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -5,6 +6,8 @@ namespace Enemy
 {
 	public class EnemyHealth : MonoBehaviour, IEnemyHealth
 	{
+		public event Action HealthChanged;
+
 		private int _current;
 
 		private IEnemyDeath _enemyDeath;

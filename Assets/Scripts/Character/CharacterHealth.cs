@@ -8,6 +8,8 @@ namespace Character
 {
 	public class CharacterHealth : MonoBehaviour, ICharacterHealth
 	{
+		public event Action HealthChanged;
+
 		private int _current;
 		private int _max;
 		private int _damageTakingCooldown;
@@ -15,6 +17,7 @@ namespace Character
 
 		private IPersistentProgressService _persistentProgressService;
 		private ICharacterDeath _characterDeath;
+
 
 		[Inject]
 		public void Constructor(IPersistentProgressService progressService, ICharacterDeath characterDeath)
@@ -39,6 +42,8 @@ namespace Character
 				return;
 
 			_current -= damage;
+			_persistentProgressService.Progress.CharacterData.CurrentHealth = _current;
+			HealthChanged?.Invoke();
 
 			if (_current <= 0)
 			{
@@ -52,8 +57,10 @@ namespace Character
 		public void AddHealth(int value)
 		{
 			_current += value;
+			_persistentProgressService.Progress.CharacterData.CurrentHealth = _current;
+			HealthChanged?.Invoke();
 
-			if(_current > _max)
+			if (_current > _max)
 				_current = _max;
 		}
 

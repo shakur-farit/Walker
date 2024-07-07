@@ -24,4 +24,11 @@ namespace Hud
 		private void OpenInventoryWindow() => 
 			_windowService.Open(WindowType.Inventory);
 	}
+
+	public class CharacterHealthBar : MonoBehaviour
+	{
+		[SerializeField] private GameObject _healthBar;
+
+
+	}
 }

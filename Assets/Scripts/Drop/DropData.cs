@@ -12,7 +12,7 @@ namespace Drop
 
 		private void Awake()
 		{
-			_type = DropType.Heart;
+			_type = DropType.Helmet;
 			_value = 2;
 		}
 	}
