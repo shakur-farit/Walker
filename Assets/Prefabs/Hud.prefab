@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 649031389216519246}
   - component: {fileID: 3223925020764713920}
   m_Layer: 5
-  m_Name: Life
+  m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4499920285712461862}
   - component: {fileID: 7252014413226192423}
   m_Layer: 5
-  m_Name: LifeBackground
+  m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837117758499870511}
   m_Layer: 5
-  m_Name: LifeBar
+  m_Name: HealthBarConteiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,6 +324,9 @@ GameObject:
   - component: {fileID: 4568945442073877179}
   - component: {fileID: 9036994385582220530}
   - component: {fileID: 2476615482447192810}
+  - component: {fileID: 4050769887144154674}
+  - component: {fileID: 5603602357358872802}
+  - component: {fileID: 109056008731647551}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
@@ -429,6 +432,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryButton: {fileID: 100252884677830951}
+--- !u!114 &4050769887144154674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094012963840429800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd2568f04b924f45835f1085baa5b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 1383830398744410451}
+--- !u!114 &5603602357358872802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094012963840429800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d134b30d11016d45bf56d22072b0c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 4050769887144154674}
+--- !u!210 &109056008731647551
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094012963840429800}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &7596031519333850331
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UI.Services.Windows;
 using UI.Windows;
 using UnityEngine;
@@ -13,22 +14,13 @@ namespace Hud
 		private IWindowsService _windowService;
 
 		[Inject]
-		public void Constructor(IWindowsService windowService) => 
+		public void Constructor(IWindowsService windowService) =>
 			_windowService = windowService;
 
-		private void Awake()
-		{
+		private void Awake() => 
 			_inventoryButton.onClick.AddListener(OpenInventoryWindow);
-		}
 
 		private void OpenInventoryWindow() => 
 			_windowService.Open(WindowType.Inventory);
-	}
-
-	public class CharacterHealthBar : MonoBehaviour
-	{
-		[SerializeField] private GameObject _healthBar;
-
-
 	}
 }

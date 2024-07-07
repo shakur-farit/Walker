@@ -1,12 +1,11 @@
 using System;
-using UnityEditor.U2D.Animation;
 
 namespace Data
 {
 	[Serializable]
 	public class Progress
 	{
-		public InventoryData InventoryData;
-		public CharacterData CharacterData;
+		public InventoryData InventoryData = new();
+		public CharacterData CharacterData= new();
 	}
 }

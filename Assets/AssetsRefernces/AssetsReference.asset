@@ -19,7 +19,7 @@ MonoBehaviour:
   HudAddress: Hud
   UIRootAddress: UIRoot
   InventoryWindowAddress: InventoryWindow
-  ItemCellAddress: 
+  ItemCellAddress: ItemCell
   ItemInformationWindowAddress: ItemInformationWindow
   LevelCompleteWindowAddress: 
   GameOverWindowAddress: 

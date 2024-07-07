@@ -1,4 +1,5 @@
 using Character.Factory;
+using Cysharp.Threading.Tasks;
 using Enemy.Factory;
 using Hud.Factory;
 using Infrastructure.Services.Randomizer;
@@ -24,42 +25,35 @@ namespace Infrastructure.States
 			_randomizer = randomizer;
 		}
 
-		public void Enter()
+		public async void Enter()
 		{
-			CreateUIRoot();
-			CreateHud();
-			CreateCharacter();
-			CreateEnemies();
+			await CreateUIRoot();
+			await CreateCharacter();
+			await CreateHud();
+			await CreateEnemies();
 		}
 
-		private void CreateUIRoot()
+		public void Exit()
 		{
-			_uiFactory.CreateUIRoot();
 		}
 
-		private void CreateHud()
-		{
-			_hudFactory.Create();
-		}
+		private async UniTask CreateUIRoot() => 
+			await _uiFactory.CreateUIRoot();
 
-		private void CreateCharacter()
-		{
-			_characterFactory.Create();
-		}
+		private async UniTask CreateCharacter() => 
+			await _characterFactory.Create();
 
-		private void CreateEnemies()
+		private async UniTask CreateHud() => 
+			await _hudFactory.Create();
+
+		private async UniTask CreateEnemies()
 		{
 			for (int i = 0; i < 3; i++)
 			{
 				float randomXPosition = _randomizer.Next(-10f, 10f);
 				float randomYPosition = _randomizer.Next(-10f, 10f);
-				_enemyFactory.Create(new Vector2(randomXPosition, randomYPosition));
+				await _enemyFactory.Create(new Vector2(randomXPosition, randomYPosition));
 			}
-		}
-
-		public void Exit()
-		{
-			
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using Drop;
 using Infrastructure.Services.PersistentProgress;
 using UnityEngine;
@@ -18,10 +17,12 @@ namespace Character
 			_persistentProgressService = persistentProgressService;
 		}
 
-		public void PickupDrop(DropData dropData)
+		public void PickupDrop(GameObject drop, DropType dropType, Sprite dropSprite, int dropPackCount, int dropValue)
 		{
-			_persistentProgressService.Progress.InventoryData.DropsList.Add(dropData);
-			DestroyDrop(dropData.gameObject);
+			_persistentProgressService.Progress.InventoryData
+				.SetItemInDropsQueue(dropType,dropSprite,dropPackCount,dropValue);
+
+			DestroyDrop(drop);
 		}
 
 		private void DestroyDrop(GameObject drop) => 

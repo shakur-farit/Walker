@@ -39,6 +39,7 @@ namespace Installers
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
 			Container.Bind<IDropFactory>().To<DropFactory>().AsSingle();
+			Container.Bind<IItemCellFactory>().To<ItemCellFactory>().AsSingle();
 		}
 
 		private void RegisterServices()
@@ -55,6 +56,7 @@ namespace Installers
 			Container.Bind<IEnemyDeath>().To<EnemyDeath>().AsSingle();
 			Container.Bind<ICharacterDeath>().To<CharacterDeath>().AsSingle();
 			Container.Bind<IDropDeath>().To<DropDeath>().AsSingle();
+			Container.Bind<ICharacterHealthProvider>().To<CharacterHealthProvider>().AsSingle();
 		}
 
 		private void RegisterGameStateMachine() => 

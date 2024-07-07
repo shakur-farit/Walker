@@ -1,6 +1,6 @@
-using System.Collections.Generic;
-using UI.Services.Windows;
-using UI.Windows;
+using Data;
+using Infrastructure.Services.PersistentProgress;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -9,23 +9,82 @@ namespace Inventory
 {
 	public class ItemCell : MonoBehaviour
 	{
-		[SerializeField] private Button _openItemCellButton;
+		[SerializeField] private Image _spriteImage;
+		[SerializeField] private TextMeshProUGUI _countText; 
+		[SerializeField] private Button _itemCellButton;
+		[SerializeField] private Button _itemDeleteButton;
 
-		private IWindowsService _windowsService;
+		private bool _isFool;
+
+		private IPersistentProgressService _persistentProgressService;
 
 		[Inject]
-		public void Constructor(IWindowsService windowsService) => 
-			_windowsService = windowsService;
+		public void Constructor(IPersistentProgressService persistentProgressService)
+		{
+			_persistentProgressService = persistentProgressService;
+		}
 
-		private void Awake() => 
-			_openItemCellButton.onClick.AddListener(OpenItemInformationWindow);
+		private void Awake()
+		{
+			_itemCellButton.onClick.AddListener(ShowDeleteButton);
 
-		private void OpenItemInformationWindow() => 
-			_windowsService.Open(WindowType.ItemInformation);
-	}
+			HideComponents();
 
-	public class Inventory
-	{
-		
+			SetupItemCell();
+		}
+
+		private void SetupItemCell()
+		{
+			InventoryData inventoryData = _persistentProgressService.Progress.InventoryData;
+
+			if (_isFool == false && inventoryData.DropsQueue.Count > 0)
+			{
+				_spriteImage.gameObject.SetActive(true);
+				_countText.gameObject.SetActive(true);
+
+				DropStruct drop = inventoryData.GetItemFromDropsQueue();
+
+				_spriteImage.sprite = drop.Sprite;
+				_countText.text = drop.PackCount.ToString();
+
+				_isFool = true;
+
+				_itemCellButton.interactable = true;
+			}
+		}
+
+		private void ShowDeleteButton()
+		{
+			if(_isFool == false)
+				return;
+
+			_itemDeleteButton.gameObject.SetActive(true);
+			_itemDeleteButton.onClick.AddListener(DeleteItem);
+		}
+
+		private void DeleteItem()
+		{
+			ClearItemCell();
+
+			_isFool = false;
+		}
+
+		private void ClearItemCell()
+		{
+			_spriteImage.sprite = null;
+			_countText.text = string.Empty;
+
+			HideComponents();
+		}
+
+		private void HideComponents()
+		{
+			_spriteImage.gameObject.SetActive(false);
+			_countText.gameObject.SetActive(false);
+			_itemDeleteButton.gameObject.SetActive(false);
+
+			_itemCellButton.interactable = false;
+
+		}
 	}
 }

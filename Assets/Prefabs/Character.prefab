@@ -348,8 +348,8 @@ GameObject:
   - component: {fileID: 4944887363623709738}
   - component: {fileID: 4509081039134828716}
   - component: {fileID: 4660828399680757714}
-  - component: {fileID: 8350251024562466536}
   - component: {fileID: 5893970113276140164}
+  - component: {fileID: 7244770402097634401}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -425,18 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponRotationPoint: {fileID: 5612511607182376808}
---- !u!114 &8350251024562466536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660828399680757715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce480669769a2374ca4b35c3710e3a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5893970113276140164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +437,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284ff8d5d71917d448c0475008bef4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 8350251024562466536}
+--- !u!114 &7244770402097634401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660828399680757715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce480669769a2374ca4b35c3710e3a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4660828399691311765
 GameObject:
   m_ObjectHideFlags: 0
