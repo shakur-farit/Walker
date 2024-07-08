@@ -28,6 +28,5 @@ namespace UI.Windows
 
 			_persistentProgressService.Progress.InventoryData.ItemCellsList.Clear();
 		}
-
 	}
 }

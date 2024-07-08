@@ -81,6 +81,18 @@ MonoBehaviour:
     m_Address: VirtualCamera
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: cd9da95266421524abf592b648280dba
+    m_Address: Tilemap
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 01e7743cd67b3554c81b7f1db85b6231
+    m_Address: GameCompleteWindow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b7c40a2f46c55c46887f5912098a7af
+    m_Address: GameOverWindow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5eb0dc72952006346a567b67d061e7da, type: 2}
   m_SchemaSet:

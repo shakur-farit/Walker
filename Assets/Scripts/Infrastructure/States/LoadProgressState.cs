@@ -1,7 +1,6 @@
 using Data;
 using Infrastructure.Services.PersistentProgress;
 using Infrastructure.Services.Randomizer;
-using Infrastructure.Services.StaticData;
 using Infrastructure.States.StatesMachine;
 
 namespace Infrastructure.States
@@ -40,6 +39,6 @@ namespace Infrastructure.States
 		private Progress InitializeNewProgress() => new();
 
 		private void EnterToLoadSceneState() => 
-			_gameStatesSwitcher.SwitchState<LoadLevelState>();
+			_gameStatesSwitcher.SwitchState<LoadSceneState>();
 	}
 }

@@ -5,7 +5,7 @@ namespace UI.Windows
 		None = 0,
 		Inventory,
 		ItemInformation,
-		LevelComplete,
-		GameOver,
+		GameComplete,
+		GameOver
 	}
 }

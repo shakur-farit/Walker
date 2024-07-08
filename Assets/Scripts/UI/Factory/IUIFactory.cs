@@ -8,12 +8,12 @@ namespace UI.Factory
 		UniTask CreateUIRoot();
 		UniTask CreateInventoryWindow();
 		UniTask CreateItemInformationWindow();
-		UniTask CreateLevelCompleteWindow();
+		UniTask CreateGameCompleteWindow();
 		UniTask CreateGameOverWindow();
 
 		void DestroyInventoryWindow();
 		void DestroyItemInformationWindow();
-		void DestroyLevelCompleteWindow();
-		void DestroyGameOVerWindow();
+		void DestroyGameCompleteWindow();
+		void DestroyGameOverWindow();
 	}
 }

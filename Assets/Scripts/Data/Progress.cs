@@ -7,5 +7,6 @@ namespace Data
 	{
 		public InventoryData InventoryData = new();
 		public CharacterData CharacterData= new();
+		public EnemyData EnemyData = new();
 	}
 }

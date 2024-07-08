@@ -9,10 +9,10 @@ namespace UI.Factory
 	public class UIFactory : FactoryBase, IUIFactory
 	{
 		private GameObject _uiRoot;
-		private GameObject _levelCompleteWindow;
-		private GameObject _gameOverWindow;
+		private GameObject _gameCompleteWindow;
 		private GameObject _inventoryWindow;
 		private GameObject _itemInformationWindow;
+		private GameObject _gameOverWindow;
 
 		protected UIFactory(IAssetsProvider assetsProvider, IObjectCreatorService objectsCreator) : 
 			base(assetsProvider, objectsCreator)
@@ -37,10 +37,10 @@ namespace UI.Factory
 			_itemInformationWindow = await CreateObject(reference.ItemInformationWindowAddress, _uiRoot.transform);
 		}
 
-		public async UniTask CreateLevelCompleteWindow()
+		public async UniTask CreateGameCompleteWindow()
 		{
 			AssetsReference reference = await InitReference();
-			_levelCompleteWindow = await CreateObject(reference.LevelCompleteWindowAddress, _uiRoot.transform);
+			_gameCompleteWindow = await CreateObject(reference.GameCompleteWindowAddress, _uiRoot.transform);
 		}
 
 		public async UniTask CreateGameOverWindow()
@@ -55,10 +55,10 @@ namespace UI.Factory
 		public void DestroyItemInformationWindow() => 
 			Object.Destroy(_itemInformationWindow);
 
-		public void DestroyLevelCompleteWindow() =>
-			Object.Destroy(_levelCompleteWindow);
+		public void DestroyGameCompleteWindow() =>
+			Object.Destroy(_gameCompleteWindow);
 
-		public void DestroyGameOVerWindow() =>
+		public void DestroyGameOverWindow() =>
 			Object.Destroy(_gameOverWindow);
 	}
 }

@@ -6,6 +6,6 @@ namespace Camera.Factory
 	public interface IVirtualCameraFactory
 	{
 		UniTask Create();
-		void Destroy(GameObject gameObject);
+		void Destroy();
 	}
 }

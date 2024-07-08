@@ -17,8 +17,8 @@ namespace Character
 
 		public void Die()
 		{
-			_characterFactory.Destroy();
 			_gameStateSwitcher.SwitchState<GameOverState>();
+			_characterFactory.Destroy();
 		}
 	}
 }

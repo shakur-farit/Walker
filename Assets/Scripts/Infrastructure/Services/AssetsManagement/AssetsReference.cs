@@ -8,13 +8,14 @@ namespace Infrastructure.Services.AssetsManagement
 		public string VirtualCameraAddress;
 		public string CharacterAddress;
 		public string EnemyAddress;
+		public string TilemapAddress;
 		public string AmmoAddress;
 		public string DropAddress;
 		public string HudAddress;
 		public string UIRootAddress;
 		public string InventoryWindowAddress;
 		public string ItemInformationWindowAddress;
-		public string LevelCompleteWindowAddress;
+		public string GameCompleteWindowAddress;
 		public string GameOverWindowAddress;
 	}
 }

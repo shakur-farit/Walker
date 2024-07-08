@@ -13,10 +13,10 @@ namespace Enemy.Factory
 		{
 		}
 
-		public async UniTask Create(Vector2 position)
+		public async UniTask<GameObject> Create(Vector2 position)
 		{
 			AssetsReference reference = await InitReference();
-			await CreateObject(reference.EnemyAddress, position);
+			return await CreateObject(reference.EnemyAddress, position);
 		}
 
 		public void Destroy(GameObject gameObject) => 

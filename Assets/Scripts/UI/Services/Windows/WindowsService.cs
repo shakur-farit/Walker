@@ -21,8 +21,8 @@ namespace UI.Services.Windows
 				case WindowType.ItemInformation:
 					await _uiFactory.CreateItemInformationWindow();
 					break;
-				case WindowType.LevelComplete:
-					await _uiFactory.CreateLevelCompleteWindow();
+				case WindowType.GameComplete:
+					await _uiFactory.CreateGameCompleteWindow();
 					break;
 				case WindowType.GameOver:
 					await _uiFactory.CreateGameOverWindow();
@@ -40,11 +40,11 @@ namespace UI.Services.Windows
 				case WindowType.ItemInformation:
 					_uiFactory.DestroyItemInformationWindow();
 					break;
-				case WindowType.LevelComplete:
-					_uiFactory.DestroyLevelCompleteWindow();
+				case WindowType.GameComplete:
+					_uiFactory.DestroyGameCompleteWindow();
 					break;
 				case WindowType.GameOver:
-					_uiFactory.DestroyGameOVerWindow();
+					 _uiFactory.DestroyGameOverWindow();
 					break;
 			}
 		}

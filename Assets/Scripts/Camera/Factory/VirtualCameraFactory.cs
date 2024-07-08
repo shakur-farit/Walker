@@ -8,6 +8,8 @@ namespace Camera.Factory
 {
 	public class VirtualCameraFactory : FactoryBase, IVirtualCameraFactory
 	{
+		private GameObject _camera;
+
 		public VirtualCameraFactory(IAssetsProvider assetsProvider, IObjectCreatorService objectsCreator) :
 			base(assetsProvider, objectsCreator)
 		{
@@ -16,10 +18,10 @@ namespace Camera.Factory
 		public async UniTask Create()
 		{
 			AssetsReference reference = await InitReference();
-			await CreateObject(reference.VirtualCameraAddress);
+			_camera = await CreateObject(reference.VirtualCameraAddress);
 		}
 
-		public void Destroy(GameObject gameObject) => 
-			Object.Destroy(gameObject);
+		public void Destroy() => 
+			Object.Destroy(_camera);
 	}
 }

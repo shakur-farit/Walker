@@ -15,11 +15,12 @@ MonoBehaviour:
   VirtualCameraAddress: VirtualCamera
   CharacterAddress: Character
   EnemyAddress: Enemy
+  TilemapAddress: Tilemap
   AmmoAddress: Ammo
   DropAddress: Drop
   HudAddress: Hud
   UIRootAddress: UIRoot
   InventoryWindowAddress: InventoryWindow
   ItemInformationWindowAddress: ItemInformationWindow
-  LevelCompleteWindowAddress: 
-  GameOverWindowAddress: 
+  GameCompleteWindowAddress: GameCompleteWindow
+  GameOverWindowAddress: GameOverWindow

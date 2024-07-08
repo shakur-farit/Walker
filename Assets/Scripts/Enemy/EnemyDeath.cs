@@ -2,8 +2,11 @@ using Character;
 using Drop;
 using Drop.Factory;
 using Enemy.Factory;
+using Infrastructure.Services.PersistentProgress;
 using Infrastructure.Services.Randomizer;
 using Infrastructure.Services.StaticData;
+using Infrastructure.States;
+using Infrastructure.States.StatesMachine;
 using UnityEngine;
 using Zenject;
 
@@ -16,16 +19,21 @@ namespace Enemy
 		private IStaticDataService _staticDataService;
 		private IDropProvider _dropProvider;
 		private IRandomService _randomizer;
+		private IPersistentProgressService _persistentProgressService;
+		private IGameStatesSwitcher _gameStateSwitcher;
 
 		[Inject]
 		public void Constructor(IEnemyFactory enemyFactory, IDropFactory dropFactory, IStaticDataService staticDataService,
-			IDropProvider dropProvider, IRandomService randomizer)
+			IDropProvider dropProvider, IRandomService randomizer, IPersistentProgressService persistentProgressService,
+			IGameStatesSwitcher gameStateSwitcher)
 		{
 			_enemyFactory = enemyFactory;
 			_dropFactory = dropFactory;
 			_staticDataService = staticDataService;
 			_dropProvider = dropProvider;
 			_randomizer = randomizer;
+			_persistentProgressService = persistentProgressService;
+			_gameStateSwitcher = gameStateSwitcher;
 		}
 
 		public void Die(GameObject gameObject)
@@ -35,6 +43,11 @@ namespace Enemy
 			CreateDropGameObject(gameObject);
 
 			Destroy(gameObject);
+
+			_persistentProgressService.Progress.EnemyData.EnemiesList.Remove(gameObject);
+
+			if(_persistentProgressService.Progress.EnemyData.EnemiesList.Count <= 0)
+				_gameStateSwitcher.SwitchState<GameCompleteState>();
 		}
 
 		private void SetRandomDrop()

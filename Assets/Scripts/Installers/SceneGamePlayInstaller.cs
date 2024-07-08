@@ -43,6 +43,7 @@ namespace Installers
 			Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
 			Container.Bind<IDropFactory>().To<DropFactory>().AsSingle();
 			Container.Bind<IVirtualCameraFactory>().To<VirtualCameraFactory>().AsSingle();
+			Container.Bind<ITilemapFactory>().To<TilemapFactory>().AsSingle();
 		}
 
 		private void RegisterServices()
