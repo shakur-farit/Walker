@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7856239b01e48cd49ac3032f2c1e815a, type: 3}
   m_Name: Weapon Static Data
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
-  ShootCooldown: 0
+  Sprite: {fileID: 21300000, guid: 6532bc2c52f179142a7333cc0f5faeda, type: 3}
+  ShootCooldown: 200

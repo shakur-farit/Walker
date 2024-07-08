@@ -11,6 +11,7 @@ namespace Infrastructure.Services.StaticData
 		private const string EnemyStaticDataAddress = "Enemy Static Data";
 		private const string WeaponStaticDataAddress = "Weapon Static Data";
 		private const string AmmoStaticDataAddress = "Ammo Static Data";
+		private const string LevelStaticDataAddress = "Level Static Data";
 
 		private readonly IAssetsProvider _assetsProvider;
 
@@ -19,6 +20,7 @@ namespace Infrastructure.Services.StaticData
 		public EnemyStaticData EnemyStaticData{ get; private set; }
 		public WeaponStaticData WeaponStaticData{ get; private set; }
 		public AmmoStaticData AmmoStaticData{ get; private set; }
+		public LevelStaticData LevelStaticData { get; private set; }
 
 		public StaticDataService(IAssetsProvider assetsProvider) =>
 			_assetsProvider = assetsProvider;
@@ -30,6 +32,7 @@ namespace Infrastructure.Services.StaticData
 			EnemyStaticData = await _assetsProvider.Load<EnemyStaticData>(EnemyStaticDataAddress);
 			WeaponStaticData = await _assetsProvider.Load<WeaponStaticData>(WeaponStaticDataAddress);
 			AmmoStaticData = await _assetsProvider.Load<AmmoStaticData>(AmmoStaticDataAddress);
+			LevelStaticData = await _assetsProvider.Load<LevelStaticData>(LevelStaticDataAddress);
 		}
 
 		public async UniTask WarmUp()
@@ -39,6 +42,7 @@ namespace Infrastructure.Services.StaticData
 			await _assetsProvider.Load<EnemyStaticData>(EnemyStaticDataAddress);
 			await _assetsProvider.Load<WeaponStaticData>(WeaponStaticDataAddress);
 			await _assetsProvider.Load<AmmoStaticData>(AmmoStaticDataAddress);
+			await _assetsProvider.Load<LevelStaticData>(LevelStaticDataAddress);
 		}
 	}
 }

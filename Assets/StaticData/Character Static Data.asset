@@ -15,5 +15,5 @@ MonoBehaviour:
   StartHealth: 50
   MaxHealth: 50
   DamageTakingCooldown: 1000
-  Speed: 5
-  EnemyDetectRange: 0
+  MovementSpeed: 2
+  EnemyDetectRange: 5

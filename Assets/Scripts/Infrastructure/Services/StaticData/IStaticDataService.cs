@@ -13,5 +13,6 @@ namespace Infrastructure.Services.StaticData
 		EnemyStaticData EnemyStaticData { get; }
 		WeaponStaticData WeaponStaticData { get; }
 		AmmoStaticData AmmoStaticData { get; }
+		LevelStaticData LevelStaticData { get; }
 	}
 }
