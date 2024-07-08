@@ -1,4 +1,6 @@
+using Character;
 using Character.Factory;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -6,24 +8,30 @@ namespace Enemy
 {
 	public class EnemyMover : MonoBehaviour
 	{
+		[SerializeField] private Transform _body;
+
 		private float _movementSpeed;
 		private float _detectRadius;
 		private GameObject _target;
 
 		private ICharacterFactory _characterFactory;
+		private IStaticDataService _staticDataService;
 
 		private Vector2 TurnCharacterToLeft => new(-1, 1);
 		private Vector2 TurnCharacterToRight => new(1, 1);
 
 		[Inject]
-		public void Constructor(ICharacterFactory characterFactory) => 
+		public void Constructor(ICharacterFactory characterFactory, IStaticDataService staticDataService)
+		{
 			_characterFactory = characterFactory;
+			_staticDataService = staticDataService;
+		}
 
 		private void Awake()
 		{
 			_target = _characterFactory.Character;
-			_movementSpeed = 1f;
-			_detectRadius = 5f;
+			_movementSpeed = _staticDataService.EnemyStaticData.MovementSpeed;
+			_detectRadius = _staticDataService.EnemyStaticData.CharcterDetectRange;
 		}
 
 		private void Update() => 
@@ -55,7 +63,7 @@ namespace Enemy
 			enemyPosition = Vector2.MoveTowards(enemyPosition,
 				targetPosition, _movementSpeed * Time.deltaTime);
 
-			transform.localScale = direction.x < 0 ? TurnCharacterToLeft : TurnCharacterToRight;
+			_body.localScale = direction.x < 0 ? TurnCharacterToLeft : TurnCharacterToRight;
 
 			transform.position = enemyPosition;
 		}

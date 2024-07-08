@@ -6,6 +6,7 @@ using Drop;
 using Drop.Factory;
 using Enemy;
 using Enemy.Factory;
+using Hud;
 using Hud.Factory;
 using Infrastructure.Services.AssetsManagement;
 using Infrastructure.Services.Input;
@@ -52,6 +53,8 @@ namespace Installers
 			Container.Bind<IPersistentProgressService>().To<PersistentProgressService>().AsSingle();
 			Container.Bind<IRandomService>().To<RandomService>().AsSingle();
 			Container.Bind<IWindowsService>().To<WindowsService>().AsSingle();
+			Container.Bind<ISaveService>().To<SaveService>().AsSingle();
+			Container.Bind<IBarService>().To<BarService>().AsSingle();
 			Container.Bind<IAmmoDeath>().To<AmmoDeath>().AsSingle();
 			Container.Bind<IEnemyDeath>().To<EnemyDeath>().AsSingle();
 			Container.Bind<ICharacterDeath>().To<CharacterDeath>().AsSingle();

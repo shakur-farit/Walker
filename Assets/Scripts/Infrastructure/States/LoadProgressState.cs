@@ -1,5 +1,6 @@
 using Data;
 using Infrastructure.Services.PersistentProgress;
+using Infrastructure.Services.Randomizer;
 using Infrastructure.Services.StaticData;
 using Infrastructure.States.StatesMachine;
 
@@ -9,19 +10,19 @@ namespace Infrastructure.States
 	{
 		private readonly IGameStatesSwitcher _gameStatesSwitcher;
 		private readonly IPersistentProgressService _persistentProgressService;
-		private readonly IStaticDataService _staticDataService;
+		private readonly ISaveService _saveLoadService;
 
 		public LoadProgressState(IGameStatesSwitcher gameStatesSwitcher, IPersistentProgressService persistentProgressService, 
-			IStaticDataService staticDataService)
+			ISaveService saveLoadService)
 		{
 			_gameStatesSwitcher = gameStatesSwitcher;
 			_persistentProgressService = persistentProgressService;
-			_staticDataService = staticDataService;
+			_saveLoadService = saveLoadService;
 		}
 
 		public void Enter()
 		{
-			InitializeNewProgress();
+			InitProgress();
 
 			EnterToLoadSceneState();
 		}
@@ -30,8 +31,13 @@ namespace Infrastructure.States
 		{
 		}
 
-		private void InitializeNewProgress() => 
-			_persistentProgressService.Progress = new Progress();
+		private void InitProgress() => 
+			_persistentProgressService.Progress = LoadProgress() != null ? LoadProgress() : InitializeNewProgress();
+
+		private Progress LoadProgress() => 
+			_saveLoadService.LoadProgress();
+
+		private Progress InitializeNewProgress() => new();
 
 		private void EnterToLoadSceneState() => 
 			_gameStatesSwitcher.SwitchState<LoadLevelState>();

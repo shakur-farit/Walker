@@ -39,9 +39,11 @@ namespace Enemy
 
 		private void SetRandomDrop()
 		{
+			int percentToHelmetDrop = 70;
+
 			int random = _randomizer.NextZeroToHundred();
 
-			DropType randomDrop = random < 70 ? DropType.Helmet : DropType.Ammo;
+			DropType randomDrop = random < percentToHelmetDrop ? DropType.Helmet : DropType.Ammo;
 
 			foreach (DropStaticData dropStaticData in _staticDataService.DropsList.DropsList)
 			{

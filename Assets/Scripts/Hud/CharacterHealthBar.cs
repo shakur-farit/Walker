@@ -1,4 +1,3 @@
-using Character;
 using Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 using Zenject;
@@ -10,14 +9,16 @@ namespace Hud
 		[SerializeField] private GameObject _healthBar;
 
 		private IPersistentProgressService _persistentProgressService;
+		private IBarService _barService;
 
 		[Inject]
-		public void Constructor(IPersistentProgressService persistentProgressService)
+		public void Constructor(IPersistentProgressService persistentProgressService, IBarService barService)
 		{
 			_persistentProgressService = persistentProgressService;
+			_barService = barService;
 		}
 
-		private void Awake() => 
+		private void Awake() =>
 			UpdateHealthBar();
 
 		public void UpdateHealthBar()
@@ -25,10 +26,7 @@ namespace Hud
 			float currentHealth = _persistentProgressService.Progress.CharacterData.CurrentHealth;
 			float maxHealth = _persistentProgressService.Progress.CharacterData.MaxHealth;
 
-			Vector3 scale = Vector3.one;
-			float value = currentHealth / maxHealth;
-			scale.x = value;
-			_healthBar.transform.localScale = scale;
+			_barService.UpdateBar(currentHealth, maxHealth, _healthBar);
 		}
 	}
 }

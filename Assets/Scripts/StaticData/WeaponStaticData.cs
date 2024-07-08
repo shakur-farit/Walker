@@ -6,6 +6,6 @@ namespace Character
 	public class WeaponStaticData : ScriptableObject
 	{
 		public Sprite Sprite;
-		public int ShootCooldown;
+		[Range(0, 5000)] public int ShootCooldown;
 	}
 }

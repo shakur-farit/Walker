@@ -35,7 +35,7 @@ namespace Character
 		private void Awake()
 		{
 			_movementInputService.RegisterMovementInputAction();
-			_movementSpeed = _staticDataService.CharacterStaticData.Speed;
+			_movementSpeed = _staticDataService.CharacterStaticData.MovementSpeed;
 		}
 
 		private void FixedUpdate() => 

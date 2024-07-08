@@ -6,9 +6,9 @@ namespace Character
 	public class AmmoStaticData : ScriptableObject
 	{
 		public Sprite Sprite;
-		public float Speed;
-		public int Lifetime;
-		public int Damage;
+		[Range(0.01f, 50f)] public float MovementSpeed;
+		[Range(1, 5000)] public int Lifetime;
+		[Range(1, 50)] public int Damage;
 		public Vector2 ColliderSize;
 	}
 }

@@ -8,7 +8,7 @@ namespace Character
 	{
 		public DropType Type;
 		public Sprite Sprite;
-		public int PackCount;
-		public int Value;
+		[Range(1, 100)] public int PackCount;
+		[Range(1, 100)] public int Value;
 	}
 }

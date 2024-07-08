@@ -17,7 +17,7 @@ namespace Ammo
 			SetupMovementSpeed();
 
 		private void SetupMovementSpeed() =>
-			_movementSpeed = _staticDataService.AmmoStaticData.Speed;
+			_movementSpeed = _staticDataService.AmmoStaticData.MovementSpeed;
 
 		private void Update() => 
 			transform.Translate(_movementSpeed, 0, 0);

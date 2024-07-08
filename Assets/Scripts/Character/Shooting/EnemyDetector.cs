@@ -1,8 +1,8 @@
-using System;
 using System.Collections.Generic;
 using Enemy;
 using Infrastructure.Services.StaticData;
 using UnityEngine;
+using Zenject;
 
 namespace Character.Shooting
 {
@@ -16,6 +16,7 @@ namespace Character.Shooting
 
 		private IStaticDataService _staticDataService;
 
+		[Inject]
 		public void Constructor(IStaticDataService staticDataService) => 
 			_staticDataService = staticDataService;
 
