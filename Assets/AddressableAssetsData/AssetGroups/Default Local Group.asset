@@ -77,6 +77,10 @@ MonoBehaviour:
     m_Address: Level Static Data
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8e1e335fe44f48846b1fabd058306b6b
+    m_Address: VirtualCamera
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5eb0dc72952006346a567b67d061e7da, type: 2}
   m_SchemaSet:

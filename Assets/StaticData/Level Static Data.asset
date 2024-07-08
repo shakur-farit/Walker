@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Level Static Data
   m_EditorClassIdentifier: 
   EnemiesCountOnLevel: 5
-  MinPositionValueToSpawn: {x: 35, y: 35}
-  MaxPositionValueToSpawn: {x: -35, y: -35}
+  MinXPositionToEnemySpawn: -35
+  MaxXPositionToEnemySpawn: 35
+  MinYPositionToEnemySpawn: -35
+  MaxYPositionToEnemySpawn: 35

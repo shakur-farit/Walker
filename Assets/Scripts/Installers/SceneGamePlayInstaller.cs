@@ -1,5 +1,6 @@
 using Ammo;
 using Ammo.Factory;
+using Camera.Factory;
 using Character;
 using Character.Factory;
 using Drop;
@@ -41,6 +42,7 @@ namespace Installers
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
 			Container.Bind<IDropFactory>().To<DropFactory>().AsSingle();
+			Container.Bind<IVirtualCameraFactory>().To<VirtualCameraFactory>().AsSingle();
 		}
 
 		private void RegisterServices()

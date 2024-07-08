@@ -1,3 +1,4 @@
+using Camera.Factory;
 using Character;
 using Character.Factory;
 using Cysharp.Threading.Tasks;
@@ -18,9 +19,11 @@ namespace Infrastructure.States
 		private readonly IUIFactory _uiFactory;
 		private readonly IEnemyFactory _enemyFactory;
 		private readonly IRandomService _randomizer;
+		private readonly IVirtualCameraFactory _virtualCameraFactory;
 
 		public LoadLevelState(ICharacterFactory characterFactory, IHudFactory hudFactory, IUIFactory uiFactory, 
-			IEnemyFactory enemyFactory, IRandomService randomizer, IStaticDataService staticDataService)
+			IEnemyFactory enemyFactory, IRandomService randomizer, IStaticDataService staticDataService, 
+			IVirtualCameraFactory virtualCameraFactory)
 		{
 			_characterFactory = characterFactory;
 			_hudFactory = hudFactory;
@@ -28,6 +31,7 @@ namespace Infrastructure.States
 			_enemyFactory = enemyFactory;
 			_randomizer = randomizer;
 			_staticDataService = staticDataService;
+			_virtualCameraFactory = virtualCameraFactory;
 		}
 
 		public async void Enter()
@@ -36,6 +40,7 @@ namespace Infrastructure.States
 			await CreateCharacter();
 			await CreateHud();
 			await CreateEnemies();
+			await CreateVirtualCamera();
 		}
 
 		public void Exit()
@@ -55,8 +60,6 @@ namespace Infrastructure.States
 		{
 			LevelStaticData levelStaticData = _staticDataService.LevelStaticData;
 
-			Debug.Log(levelStaticData.MinXPositionToEnemySpawn +"/ " + levelStaticData.MaxXPositionToEnemySpawn);
-
 			for (int i = 0; i < levelStaticData.EnemiesCountOnLevel; i++)
 			{
 				float randomXPosition = _randomizer.Next(levelStaticData.MinXPositionToEnemySpawn, levelStaticData.MaxXPositionToEnemySpawn);
@@ -64,5 +67,8 @@ namespace Infrastructure.States
 				await _enemyFactory.Create(new Vector2(randomXPosition, randomYPosition));
 			}
 		}
+
+		private async UniTask CreateVirtualCamera() => 
+			await _virtualCameraFactory.Create();
 	}
 }

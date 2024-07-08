@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartHealth: 20
   MaxHealth: 20
-  MovementSpeed: 0.5
+  MovementSpeed: 1
   Damage: 5
   CharcterDetectRange: 10

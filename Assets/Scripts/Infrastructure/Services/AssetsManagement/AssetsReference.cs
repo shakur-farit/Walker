@@ -4,7 +4,8 @@ namespace Infrastructure.Services.AssetsManagement
 {
 	[CreateAssetMenu(fileName = "AssetsReference", menuName = "Scriptable Objects/Assets Reference")]
 	public class AssetsReference : ScriptableObject
-	{ 
+	{
+		public string VirtualCameraAddress;
 		public string CharacterAddress;
 		public string EnemyAddress;
 		public string AmmoAddress;
