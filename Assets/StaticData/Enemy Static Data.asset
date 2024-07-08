@@ -15,5 +15,5 @@ MonoBehaviour:
   StartHealth: 20
   MaxHealth: 20
   MovementSpeed: 1
-  Damage: 5
+  Damage: 3
   CharcterDetectRange: 10

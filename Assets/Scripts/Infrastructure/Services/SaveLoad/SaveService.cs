@@ -17,7 +17,6 @@ namespace Infrastructure.Services.Randomizer
 			{
 				string json = JsonUtility.ToJson(progress);
 				File.WriteAllText(savePath, json);
-				Debug.Log("Progress saved.");
 			}
 			catch (Exception e)
 			{
@@ -33,7 +32,6 @@ namespace Infrastructure.Services.Randomizer
 				{
 					string json = File.ReadAllText(savePath);
 					Progress progress = JsonUtility.FromJson<Progress>(json);
-					Debug.Log("Progress loaded.");
 					return progress;
 				}
 				catch (Exception e)
@@ -54,7 +52,6 @@ namespace Infrastructure.Services.Randomizer
 				try
 				{
 					File.Delete(savePath);
-					Debug.Log("Progress deleted.");
 				}
 				catch (Exception e)
 				{
