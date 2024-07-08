@@ -1,4 +1,5 @@
 using Enemy;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -11,10 +12,14 @@ namespace Ammo
 		private int _damage;
 
 		private IAmmoDeath _ammoDeath;
+		private IStaticDataService _staticDataService;
 
 		[Inject]
-		public void Constructor(IAmmoDeath ammoDeath) => 
+		public void Constructor(IAmmoDeath ammoDeath, IStaticDataService staticDataService)
+		{
 			_ammoDeath = ammoDeath;
+			_staticDataService = staticDataService;
+		}
 
 
 		private void Awake()
@@ -28,10 +33,10 @@ namespace Ammo
 			TryDealDamageToEnemy(other);
 
 		private void SetupColliderRadius() =>
-			_collider.size = new Vector2(0.15f, 0.03f);
+			_collider.size = _staticDataService.AmmoStaticData.ColliderSize;
 
 		private void SetupDamage() =>
-			_damage = 5;
+			_damage = _staticDataService.AmmoStaticData.Damage;
 
 		private void TryDealDamageToEnemy(Collider2D other)
 		{
@@ -47,5 +52,20 @@ namespace Ammo
 
 		private void DestroyAmmo() => 
 			_ammoDeath.Die(gameObject);
+	}
+
+	public class AmmoView : MonoBehaviour
+	{
+		[SerializeField] private SpriteRenderer _spriteRenderer;
+
+		private IStaticDataService _staticDataService;
+
+		[Inject]
+		public void Constructor(IStaticDataService staticDataService) => 
+			_staticDataService = staticDataService;
+
+
+		private void Awake() => 
+			_spriteRenderer.sprite = _staticDataService.AmmoStaticData.Sprite;
 	}
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db35c504733f9014d8621658947e4e19, type: 3}
+  m_Name: Drops List Static Data
+  m_EditorClassIdentifier: 
+  DropsList:
+  - {fileID: 11400000, guid: a8092abb94699fe4e91f323f170708d4, type: 2}
+  - {fileID: 11400000, guid: d9b00c6d94c0ca24292c9915e3b4089f, type: 2}

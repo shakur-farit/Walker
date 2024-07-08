@@ -2,6 +2,8 @@ namespace Drop
 {
 	public enum DropType
 	{
-		Helmet
+		None = 0,
+		Helmet,
+		Ammo
 	}
 }

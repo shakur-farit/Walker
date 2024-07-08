@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Enemy;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 
 namespace Character.Shooting
@@ -8,8 +10,17 @@ namespace Character.Shooting
 	{
 		[SerializeField] private CharacterAimer _aimer;
 		[SerializeField] private Shooter _shooter;
+		[SerializeField] private CircleCollider2D _circleCollider;
 
 		private readonly List<EnemyHealth> _enemiesList = new();
+
+		private IStaticDataService _staticDataService;
+
+		public void Constructor(IStaticDataService staticDataService) => 
+			_staticDataService = staticDataService;
+
+		private void Awake() => 
+			_circleCollider.radius = _staticDataService.CharacterStaticData.EnemyDetectRange;
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{

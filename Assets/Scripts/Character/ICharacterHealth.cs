@@ -2,7 +2,7 @@ using Infrastructure.Services.Health;
 
 namespace Character
 {
-	public interface ICharacterHealth : IHealthAddable
+	public interface ICharacterHealth : IHealth
 	{
 	}
 }

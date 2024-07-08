@@ -1,9 +1,8 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Infrastructure.Services.AssetsManagement
 {
-	[CreateAssetMenu(fileName = "AssetsReference", menuName = "Scriptable Object/Assets Reference")]
+	[CreateAssetMenu(fileName = "AssetsReference", menuName = "Scriptable Objects/Assets Reference")]
 	public class AssetsReference : ScriptableObject
 	{ 
 		public string CharacterAddress;
@@ -13,7 +12,6 @@ namespace Infrastructure.Services.AssetsManagement
 		public string HudAddress;
 		public string UIRootAddress;
 		public string InventoryWindowAddress;
-		public string ItemCellAddress;
 		public string ItemInformationWindowAddress;
 		public string LevelCompleteWindowAddress;
 		public string GameOverWindowAddress;

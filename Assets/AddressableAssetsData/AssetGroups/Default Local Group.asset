@@ -53,8 +53,24 @@ MonoBehaviour:
     m_Address: ItemInformationWindow
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: d64bc2410878e304a9162d9dd16ebc3f
-    m_Address: ItemCell
+  - m_GUID: c12ca87d106c9ae449e69c15fa11f771
+    m_Address: Drops List Static Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 13a874284798a3a4695d68a94587d31b
+    m_Address: Ammo Static Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1c696cc3d8f126047ba490aff42f8161
+    m_Address: Character Static Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e63927552315804c8bfe615a1165432
+    m_Address: Enemy Static Data
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 56b5f17188f13bb47a5ac01aa256f3c5
+    m_Address: Weapon Static Data
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

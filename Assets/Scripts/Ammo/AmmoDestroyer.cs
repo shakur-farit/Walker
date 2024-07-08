@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -9,18 +10,20 @@ namespace Ammo
 		
 		private bool _isDestroyed;
 
-		private int _livetime;
+		private int _lifetime;
 
 		private IAmmoDeath _ammoDeath;
+		private IStaticDataService _staticDataService;
 
 		[Inject]
-		public void Constructor(IAmmoDeath ammoDeath)
+		public void Constructor(IAmmoDeath ammoDeath, IStaticDataService staticDataService)
 		{
 			_ammoDeath = ammoDeath;
+			_staticDataService = staticDataService;
 		}
 
 		private void Awake() =>
-			_livetime = 1000;
+			_lifetime = _staticDataService.AmmoStaticData.Lifetime;
 
 		private async void Start() => 
 			await DestroyAmmo();
@@ -30,7 +33,7 @@ namespace Ammo
 
 		private async UniTask DestroyAmmo()
 		{
-			await UniTask.Delay(_livetime);
+			await UniTask.Delay(_lifetime);
 
 			if(_isDestroyed)
 				return;

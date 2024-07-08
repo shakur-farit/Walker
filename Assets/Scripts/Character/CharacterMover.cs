@@ -1,4 +1,5 @@
 using Infrastructure.Services.Input;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,7 @@ namespace Character
 		private float _movementSpeed;
 
 		private IMovementInputService _movementInputService;
+		private IStaticDataService _staticDataService;
 
 		private Vector2 TurnCharacterToLeft => new(-1, 1);
 		private Vector2 TurnWeaponToLeft => new(-4, -4);
@@ -18,8 +20,11 @@ namespace Character
 		private Vector2 TurnWeaponToRight => new(4, 4);
 
 		[Inject]
-		public void Construct(IMovementInputService movementInputService) => 
+		public void Construct(IMovementInputService movementInputService, IStaticDataService staticDataService)
+		{
 			_movementInputService = movementInputService;
+			_staticDataService = staticDataService;
+		}
 
 		private void OnEnable() => 
 			_movementInputService.OnEnable();
@@ -30,7 +35,7 @@ namespace Character
 		private void Awake()
 		{
 			_movementInputService.RegisterMovementInputAction();
-			_movementSpeed = 5;
+			_movementSpeed = _staticDataService.CharacterStaticData.Speed;
 		}
 
 		private void FixedUpdate() => 

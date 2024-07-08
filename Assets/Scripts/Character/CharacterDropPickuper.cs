@@ -1,5 +1,6 @@
 using Drop;
 using Infrastructure.Services.PersistentProgress;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -9,18 +10,24 @@ namespace Character
 	{
 		private IDropDeath _dropDeath;
 		private IPersistentProgressService _persistentProgressService;
+		private IStaticDataService _staticDataService;
 
 		[Inject]
-		public void Constructor(IDropDeath dropDeath, IPersistentProgressService persistentProgressService)
+		public void Constructor(IDropDeath dropDeath, IPersistentProgressService persistentProgressService,
+			IStaticDataService staticDataService)
 		{
 			_dropDeath = dropDeath;
 			_persistentProgressService = persistentProgressService;
+			_staticDataService = staticDataService;
 		}
 
-		public void PickupDrop(GameObject drop, DropType dropType, Sprite dropSprite, int dropPackCount, int dropValue)
+		public void PickupDrop(GameObject drop, DropType dropType)
 		{
-			_persistentProgressService.Progress.InventoryData
-				.SetItemInDropsQueue(dropType,dropSprite,dropPackCount,dropValue);
+			foreach (DropStaticData dropData in _staticDataService.DropsList.DropsList)
+			{
+				if(dropType == dropData.Type)
+					_persistentProgressService.Progress.InventoryData.DropsStaticDataList.Add(dropData);
+			}
 
 			DestroyDrop(drop);
 		}

@@ -15,6 +15,7 @@ using Infrastructure.Services.Randomizer;
 using Infrastructure.Services.StaticData;
 using Infrastructure.States.Factory;
 using Infrastructure.States.StatesMachine;
+using Inventory;
 using UI.Factory;
 using UI.Services.Windows;
 using Zenject;
@@ -39,7 +40,6 @@ namespace Installers
 			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 			Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
 			Container.Bind<IDropFactory>().To<DropFactory>().AsSingle();
-			Container.Bind<IItemCellFactory>().To<ItemCellFactory>().AsSingle();
 		}
 
 		private void RegisterServices()
@@ -57,6 +57,8 @@ namespace Installers
 			Container.Bind<ICharacterDeath>().To<CharacterDeath>().AsSingle();
 			Container.Bind<IDropDeath>().To<DropDeath>().AsSingle();
 			Container.Bind<ICharacterHealthProvider>().To<CharacterHealthProvider>().AsSingle();
+			Container.Bind<IDropProvider>().To<DropProvider>().AsSingle();
+			Container.Bind<IItemProvider>().To<ItemProvider>().AsSingle();
 		}
 
 		private void RegisterGameStateMachine() => 

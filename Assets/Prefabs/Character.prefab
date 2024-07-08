@@ -977,6 +977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aimer: {fileID: 148239312603445053}
   _shooter: {fileID: 8946061094558579508}
+  _circleCollider: {fileID: 1165605908114130672}
 --- !u!1 &8604938459265019292
 GameObject:
   m_ObjectHideFlags: 0

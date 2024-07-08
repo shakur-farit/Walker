@@ -11,8 +11,7 @@ namespace UI.Windows
 		private IPersistentProgressService _persistentProgressService;
 
 		[Inject]
-		public void Constructor(IWindowsService windowsService, IItemCellFactory itemCellFactory,
-			IPersistentProgressService persistentProgressService)
+		public void Constructor(IWindowsService windowsService, IPersistentProgressService persistentProgressService)
 		{
 			_windowsService = windowsService;
 			_persistentProgressService = persistentProgressService;

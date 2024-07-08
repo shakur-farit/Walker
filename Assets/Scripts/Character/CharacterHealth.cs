@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Infrastructure.Services.PersistentProgress;
+using Infrastructure.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -18,24 +19,30 @@ namespace Character
 		private IPersistentProgressService _persistentProgressService;
 		private ICharacterDeath _characterDeath;
 		private ICharacterHealthProvider _provider;
+		private IStaticDataService _staticDataService;
 
 		[Inject]
-		public void Constructor(IPersistentProgressService progressService, ICharacterDeath characterDeath, ICharacterHealthProvider provider)
+		public void Constructor(IPersistentProgressService progressService, ICharacterDeath characterDeath,
+			ICharacterHealthProvider provider, IStaticDataService staticDataService)
 		{
 			_persistentProgressService = progressService;
 			_characterDeath = characterDeath;
 			_provider = provider;
+			_staticDataService = staticDataService;
 		}
 
-		private void Awake()
+		private void Awake() => 
+			SetStartData();
+
+		private void SetStartData()
 		{
-			_current = 20;
-			_max = 20;
+			_current = _staticDataService.CharacterStaticData.StartHealth;
+			_max = _staticDataService.CharacterStaticData.MaxHealth;
 
 			_persistentProgressService.Progress.CharacterData.MaxHealth = _max;
 			_persistentProgressService.Progress.CharacterData.CurrentHealth = _current;
 
-			_damageTakingCooldown = 1000;
+			_damageTakingCooldown = _staticDataService.CharacterStaticData.DamageTakingCooldown;
 			_canTakeDamage = true;
 
 			_provider.CharacterHealth = this;
@@ -61,17 +68,6 @@ namespace Character
 			}
 
 			TakeCooldown();
-		}
-
-		public void AddHealth(int value)
-		{
-			_current += value;
-
-			if (_current > _max)
-				_current = _max;
-
-			_persistentProgressService.Progress.CharacterData.CurrentHealth = _current;
-			HealthChanged?.Invoke();
 		}
 
 		private async void TakeCooldown()
