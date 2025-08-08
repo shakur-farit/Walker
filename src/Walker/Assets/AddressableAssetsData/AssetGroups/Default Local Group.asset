@@ -17,17 +17,41 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: cdc7cc8eaaaeb05488fe95bbeb787d8f
   m_SerializeEntries:
+  - m_GUID: 0b3192d5b147fc0469c98dc523ac61fc
+    m_Address: Assets/StaticData/Enemy/OrcConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64ad2901bf1ad904a9bfd76680ef2878
+    m_Address: Assets/StaticData/Level/FirstLevelConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6ef738bad581b2f4cb32ee5ede460683
     m_Address: Assets/StaticData/Window/MainMenuWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80a1a4843c9970b44bf0864a1ec67dd2
+    m_Address: Assets/StaticData/Hero/TheGeneralConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - HeroConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9b4874fe7e922a347b4674ec2d298417
     m_Address: Assets/StaticData/Window/LevelCompleteWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcb0a6e83445b41459242160f853236b
+    m_Address: Assets/StaticData/Ammo/HeroAmmoConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e571ce7a8a2c59b4588142170cfa1dd0
     m_Address: Assets/StaticData/Window/GameOverWindowConfig.asset

@@ -14,7 +14,7 @@ namespace Code.Gameplay.Cameras.Systems
 			_cameraProvider = cameraProvider;
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
-					//GameMatcher.Hero,
+					GameMatcher.Hero,
 					GameMatcher.WorldPosition));
 		}
 

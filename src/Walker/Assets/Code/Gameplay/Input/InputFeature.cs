@@ -1,5 +1,4 @@
 using Code.Gameplay.Input.Systems;
-using Code.Infrastructure;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Input

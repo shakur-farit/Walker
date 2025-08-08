@@ -1,0 +1,14 @@
+﻿using Code.Gameplay.Features.Hero.Systems;
+using Code.Infrastructure.Systems;
+
+namespace Code.Gameplay.Features.Enemy
+{
+	public sealed class AmmoFeature : Feature
+	{
+		public AmmoFeature(ISystemsFactory systems)
+		{
+			Add(systems.Create<HeroShootingSystem>());
+			Add(systems.Create<MarkAmmoDestructOnTargetLimitExceededSystem>());
+		}
+	}
+}

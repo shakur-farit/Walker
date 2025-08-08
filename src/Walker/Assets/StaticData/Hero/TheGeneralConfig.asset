@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bc212554bf75041acc3ed536977914, type: 3}
+  m_Name: TheGeneralConfig
+  m_EditorClassIdentifier: 
+  TypeId: 1
+  ViewPrefab: {fileID: 8254426112849521288, guid: a3b1501b24aa4bf4fa906ff17a06853a, type: 3}
+  MovementSpeed: 5
+  AttackRange: 6
+  AttackCooldown: 2
+  CurrentHp: 10
+  MaxHp: 10
+  Damage: 2

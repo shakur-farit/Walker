@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 1693976267}
   - component: {fileID: 1693976266}
   - component: {fileID: 1693976265}
+  - component: {fileID: 1693976269}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -444,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Initializers:
   - {fileID: 1693976265}
+  - {fileID: 1693976269}
 --- !u!114 &1693976267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +493,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1693976269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693976264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199f7ce3797b8cd4289de06d7257e938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 519420031}
 --- !u!224 &1698206724 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7035207698639116263, guid: 539376a9a1823b04ea92b779aeea1bbd, type: 3}
