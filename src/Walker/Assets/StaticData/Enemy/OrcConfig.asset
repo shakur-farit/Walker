@@ -15,9 +15,13 @@ MonoBehaviour:
   TypeId: 1
   ViewPrefab: {fileID: 8166552356577901019, guid: cbcf4f64da2d0bb49a7040efb62853de, type: 3}
   AnimatorController: {fileID: 9100000, guid: cf2b002105910e04a8f79c160b4602a0, type: 2}
-  MovementSpeed: 0
-  AttackRange: 0
-  CurrentHp: 5
-  MaxHp: 5
+  MovementSpeed: 0.2
+  MovementRange: 7
+  AttackRange: 2
+  AttackInterval: 2
+  ShootingRange: 6
+  ShootingInterval: 2
+  Damage: 2
+  CurrentHp: 10
+  MaxHp: 10
   Value: 2
-  EffectSetups: []

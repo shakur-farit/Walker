@@ -16,7 +16,7 @@ MonoBehaviour:
   ViewPrefab: {fileID: 8254426112849521288, guid: a3b1501b24aa4bf4fa906ff17a06853a, type: 3}
   MovementSpeed: 5
   AttackRange: 6
-  AttackCooldown: 2
+  AttackCooldown: 1
   CurrentHp: 10
   MaxHp: 10
   Damage: 2

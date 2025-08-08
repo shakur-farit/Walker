@@ -42,6 +42,7 @@ namespace Code.Meta.UI.Windows.Behaviours
 			CreateEntity.Empty()
 				.AddUpgradeValue(1)
 				.AddUpgradePrice(1)
+				.With(x => x.isHpUpgrade = true)
 				.With(x => x.isUpgradeRequested = true);
 
 			CloseWindow();
@@ -50,8 +51,9 @@ namespace Code.Meta.UI.Windows.Behaviours
 		private void DecreaseFireCooldown()
 		{
 			CreateEntity.Empty()
-				.AddUpgradeValue(0.5f)
+				.AddUpgradeValue(1f)
 				.AddUpgradePrice(1)
+				.With(x => x.isCooldownUpgrade = true)
 				.With(x => x.isUpgradeRequested = true);
 
 			CloseWindow();

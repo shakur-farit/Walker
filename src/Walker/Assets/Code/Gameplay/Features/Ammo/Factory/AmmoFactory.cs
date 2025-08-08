@@ -56,7 +56,6 @@ namespace Code.Gameplay.Features.Enemy
 					.AddTargetLimit(config.Pierce)
 					.AddRadius(config.Range)
 					.With(x => x.isAmmo = true)
-					.With(x => x.isLinerMovement = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isReadyToCollectTargets = true)
 					.With(x => x.isCollectTargetsContinuously = true)

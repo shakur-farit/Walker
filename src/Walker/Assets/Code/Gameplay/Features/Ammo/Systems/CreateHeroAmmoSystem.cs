@@ -4,7 +4,6 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
@@ -31,12 +30,11 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
-				Debug.Log(hero.Damage);
-
 				_ammoFactory.CreateAmmo(AmmoTypeId.HeroAmmo, hero.FirePositionPoint.position)
 					.AddProducerId(hero.Id)
 					.AddDirection(hero.WeaponRotationPoint.right)
 					.AddEffectSetups(new(){EffectSetup.FormId(EffectTypeId.Damage, hero.Damage)})
+					.With(x => x.isLinerMovement = true)
 					.With(x => x.isMoving = true);
 
 				hero.PutOnCooldown();

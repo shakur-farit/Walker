@@ -70,11 +70,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - WindowConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e91bc42706ab5ca4db526e278b2eef43
+    m_Address: Assets/StaticData/Enemy/HedusaConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EnemyConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efb6b2f719fb826439a9b109e867f4f6
     m_Address: Assets/StaticData/Window/HudWindowConfig.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9891353d1f0d764faadb6b6eaeb6c09
+    m_Address: Assets/StaticData/Ammo/EnemyAmmoConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AmmoConfig
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 09a34e54e0d57cd4cbcbd906ccadb6fa, type: 2}

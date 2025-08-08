@@ -52,7 +52,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddHeroTypeId(typeId)
 					.AddWorldPosition(at)
 					.AddSpeed(baseStats[Stats.Speed])
-					.AddCurrentHp(baseStats[Stats.MaxHp])
+					.AddCurrentHp(config.CurrentHp)
 					.AddMaxHp(baseStats[Stats.MaxHp])
 					.AddDamage(baseStats[Stats.Damage])
 					.AddBaseStats(baseStats)

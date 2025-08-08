@@ -1,8 +1,5 @@
 ﻿using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -13,7 +10,6 @@ namespace Code.Meta.UI.Windows.Behaviours
 	{
 		[SerializeField] private Button _restartButton;
 		[SerializeField] private Button _quitButton;
-
 
 		private IGameStateMachine _stateMachine;
 

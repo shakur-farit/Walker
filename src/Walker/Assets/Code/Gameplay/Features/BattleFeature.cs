@@ -5,6 +5,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Hero.Systems;
 using Code.Gameplay.Features.Level;
 using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Movement;
@@ -25,6 +26,8 @@ namespace Code.Gameplay.Features
 			Add(systems.Create<LevelFeature>());
 
 			Add(systems.Create<CollectTargetsFeature>());
+
+			Add(systems.Create<UpgradeFeature>());
 
 			Add(systems.Create<HeroFeature>());
 			Add(systems.Create<EnemyFeature>());

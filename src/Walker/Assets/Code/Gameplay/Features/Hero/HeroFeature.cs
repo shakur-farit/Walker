@@ -22,13 +22,11 @@ namespace Code.Gameplay.Features.Hero
 			Add(systems.Create<HeroMovingSystem>());
 			Add(systems.Create<HeroMovingAnimateSystem>());
 			Add(systems.Create<HeroShootingSystem>());
-	
-			Add(systems.Create<IncreaseHeroCurrentHpSystem>());
-			Add(systems.Create<IncreaseHeroDamageSystem>());
-			Add(systems.Create<DecreaseHeroShootingCooldownSystem>());
 
 			Add(systems.Create<UpdateHeartUIForHeroInHolderSystem>());
 			Add(systems.Create<UpdateCoinsTextInHolderSystem>());
+
+			Add(systems.Create<HeroDeathSystem>());
 		}
 	}
 }

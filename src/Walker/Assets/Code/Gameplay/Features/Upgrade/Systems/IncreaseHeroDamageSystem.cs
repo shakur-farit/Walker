@@ -1,19 +1,21 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class IncreaseHeroCurrentHpSystem : IExecuteSystem
+	public class IncreaseHeroDamageSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 		private readonly IGroup<GameEntity> _requests;
 		private readonly IGroup<GameEntity> _heroes;
 
-		public IncreaseHeroCurrentHpSystem(GameContext game)
+		public IncreaseHeroDamageSystem(GameContext game)
 		{
 			_requests = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.UpgradeRequested,
+					GameMatcher.DamageUpgrade,
 					GameMatcher.UpgradePrice,
 					GameMatcher.UpgradeValue));
 
@@ -22,8 +24,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.Coins,
-					GameMatcher.CurrentHp,
-					GameMatcher.MaxHp));
+					GameMatcher.Damage));
 		}
 
 		public void Execute()
@@ -39,10 +40,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 
 				hero.ReplaceCoins(hero.Coins - request.UpgradePrice);
 
-				hero.ReplaceCurrentHp(hero.CurrentHp + request.UpgradeValue);
-
-				if (hero.CurrentHp > hero.MaxHp)
-					hero.ReplaceCurrentHp(hero.MaxHp);
+				hero.ReplaceDamage(hero.Damage + request.UpgradeValue);
 			}
 		}
 	}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TypeId: 1
   ViewPrefab: {fileID: 2243231872987813085, guid: a253c947a6ee16148a7842142e337cfd, type: 3}
-  Sprite: {fileID: 21300000, guid: 4df9cc7131cd27f4288bca5e76c82034, type: 3}
+  Sprite: {fileID: 21300000, guid: c3be09077243891458bdbf46a57d2e8a, type: 3}
   MovementSpeed: 5
   RotationAngle: 0
   Range: 0.1

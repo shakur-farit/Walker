@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Enemy
 		{
 			Add(systems.Create<CreateEnemySystem>());
 
+			Add(systems.Create<EnemyShootingSystem>());
+			Add(systems.Create<EnemyMovingSystem>());
 			Add(systems.Create<EnemyMovingAnimateSystem>());
 
 			Add(systems.Create<EnemyHpBarUpgradeSystem>());

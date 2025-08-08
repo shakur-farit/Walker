@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Level.Systems
 					GameMatcher.Level,
 					GameMatcher.NextWaveIndex,
 					GameMatcher.EnemiesInWaveCount)
-				.NoneOf(GameMatcher.EnemyAbsent));
+				.NoneOf(GameMatcher.EnemyAbsent, GameMatcher.Processed));
 		}
 
 		public void Execute()

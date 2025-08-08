@@ -17,6 +17,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 			_requests = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.UpgradeRequested,
+					GameMatcher.CooldownUpgrade,
 					GameMatcher.UpgradePrice,
 					GameMatcher.UpgradeValue));
 

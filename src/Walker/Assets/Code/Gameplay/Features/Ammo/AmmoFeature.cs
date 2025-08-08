@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Enemy
 		public AmmoFeature(ISystemsFactory systems)
 		{
 			Add(systems.Create<CreateHeroAmmoSystem>());
+			Add(systems.Create<CreateEnemyAmmoSystem>());
 			Add(systems.Create<MarkAmmoDestructOnTargetLimitExceededSystem>());
 		}
 	}

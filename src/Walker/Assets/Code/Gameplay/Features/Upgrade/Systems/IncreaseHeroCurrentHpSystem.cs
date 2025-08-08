@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class IncreaseHeroDamageSystem : IExecuteSystem
+	public class IncreaseHeroCurrentHpSystem : IExecuteSystem
 	{
 		private readonly List<GameEntity> _buffer = new(1);
 		private readonly IGroup<GameEntity> _requests;
 		private readonly IGroup<GameEntity> _heroes;
 
-		public IncreaseHeroDamageSystem(GameContext game)
+		public IncreaseHeroCurrentHpSystem(GameContext game)
 		{
 			_requests = game.GetGroup(GameMatcher
 				.AllOf(
 					GameMatcher.UpgradeRequested,
-					GameMatcher.DamageUpgrade,
+					GameMatcher.HpUpgrade,
 					GameMatcher.UpgradePrice,
 					GameMatcher.UpgradeValue));
 
@@ -24,7 +24,8 @@ namespace Code.Gameplay.Features.Hero.Systems
 				.AllOf(
 					GameMatcher.Hero,
 					GameMatcher.Coins,
-					GameMatcher.Damage));
+					GameMatcher.CurrentHp,
+					GameMatcher.MaxHp));
 		}
 
 		public void Execute()
@@ -40,9 +41,10 @@ namespace Code.Gameplay.Features.Hero.Systems
 
 				hero.ReplaceCoins(hero.Coins - request.UpgradePrice);
 
-				hero.ReplaceDamage(hero.Damage + request.UpgradeValue);
+				hero.ReplaceCurrentHp(hero.CurrentHp + request.UpgradeValue);
 
-				Debug.Log($"Ugrade damage {hero.Damage}");
+				if (hero.CurrentHp > hero.MaxHp)
+					hero.ReplaceCurrentHp(hero.MaxHp);
 			}
 		}
 	}
