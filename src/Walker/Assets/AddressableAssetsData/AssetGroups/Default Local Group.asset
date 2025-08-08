@@ -41,6 +41,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - HeroConfig
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81178d66a79b4bf4194bab7d2690f801
+    m_Address: HeartUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 896a1b4d90ca8cc408539c598a21e27d
+    m_Address: Assets/StaticData/Window/ShopWindowConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WindowConfig
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9b4874fe7e922a347b4674ec2d298417
     m_Address: Assets/StaticData/Window/LevelCompleteWindowConfig.asset
     m_ReadOnly: 0

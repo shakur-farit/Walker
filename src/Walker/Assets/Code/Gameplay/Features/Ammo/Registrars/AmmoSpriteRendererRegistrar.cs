@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.StaticData;
+using Code.Infrastructure.View;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 using Zenject;

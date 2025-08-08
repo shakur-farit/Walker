@@ -11,10 +11,12 @@ namespace Code.Gameplay.Features.Enemy
 	{
 		public EnemyTypeId TypeId;
 		public EntityBehaviour ViewPrefab;
+		public RuntimeAnimatorController AnimatorController;
 		public float MovementSpeed;
 		public float AttackRange;
 		public float CurrentHp;
 		public float MaxHp;
+		public int Value;
 
 		public List<EffectSetup> EffectSetups;
 	}

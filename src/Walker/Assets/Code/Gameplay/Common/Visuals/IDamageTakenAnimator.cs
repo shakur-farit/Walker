@@ -2,6 +2,6 @@
 {
   public interface IDamageTakenAnimator
   {
-    void PlayDamageTaken();
+    void PlayDamageTaken(float value);
   }
 }

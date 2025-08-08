@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class MovingOnEnemyDetectedSystem : IExecuteSystem
+	public class HeroMovingSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public MovingOnEnemyDetectedSystem(GameContext game)
+		public HeroMovingSystem(GameContext game)
 		{
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(

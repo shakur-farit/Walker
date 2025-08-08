@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class ShootingOnEnemyDetectedSystem : IExecuteSystem
+	public class HeroShootingSystem : IExecuteSystem
 	{
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public ShootingOnEnemyDetectedSystem(GameContext game)
+		public HeroShootingSystem(GameContext game)
 		{
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(

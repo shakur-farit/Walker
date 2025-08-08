@@ -4,16 +4,17 @@ using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
-	public class HeroShootingSystem : IExecuteSystem
+	public class CreateHeroAmmoSystem : IExecuteSystem
 	{
 		private readonly IAmmoFactory _ammoFactory;
 		private readonly IGroup<GameEntity> _heroes;
 		private readonly List<GameEntity> _buffer = new(1);
 
-		public HeroShootingSystem(GameContext game, IAmmoFactory ammoFactory)
+		public CreateHeroAmmoSystem(GameContext game, IAmmoFactory ammoFactory)
 		{
 			_ammoFactory = ammoFactory;
 			_heroes = game.GetGroup(GameMatcher
@@ -22,6 +23,7 @@ namespace Code.Gameplay.Features.Hero.Systems
 					GameMatcher.FirePositionPoint,
 					GameMatcher.Shooting,
 					GameMatcher.WeaponRotationPoint,
+					GameMatcher.Damage,
 					GameMatcher.CooldownUp));
 		}
 
@@ -29,6 +31,8 @@ namespace Code.Gameplay.Features.Hero.Systems
 		{
 			foreach (GameEntity hero in _heroes.GetEntities(_buffer))
 			{
+				Debug.Log(hero.Damage);
+
 				_ammoFactory.CreateAmmo(AmmoTypeId.HeroAmmo, hero.FirePositionPoint.position)
 					.AddProducerId(hero.Id)
 					.AddDirection(hero.WeaponRotationPoint.right)

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Effects.Systems
 {
@@ -32,7 +31,7 @@ namespace Code.Gameplay.Features.Effects.Systems
 				target.ReplaceCurrentHp(target.CurrentHp - effect.EffectValue);
 
 				if (target.hasDamageTakenAnimator)
-					target.DamageTakenAnimator.PlayDamageTaken();
+					target.DamageTakenAnimator.PlayDamageTaken(effect.EffectValue);
 			}
 		}
 	}

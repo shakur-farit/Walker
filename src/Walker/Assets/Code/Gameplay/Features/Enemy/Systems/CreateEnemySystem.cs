@@ -27,7 +27,8 @@ namespace Code.Gameplay.Features.Enemy
 					GameMatcher.EnemyWaves,
 					GameMatcher.NextWaveIndex,
 					GameMatcher.EnemyAbsent)
-				.NoneOf(GameMatcher.Processed));
+				.NoneOf(
+					GameMatcher.Processed));
 			
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(

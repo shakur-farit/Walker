@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HudWindowConfig
   m_EditorClassIdentifier: 
   TypeId: 1
-  ViewPrefab: {fileID: 2339753412790492840, guid: 86f615d28a9ed594b93174f577f7f6ec, type: 3}
+  ViewPrefab: {fileID: 1311700150535105114, guid: 86f615d28a9ed594b93174f577f7f6ec, type: 3}

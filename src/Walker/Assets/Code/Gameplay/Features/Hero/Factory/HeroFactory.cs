@@ -62,6 +62,7 @@ namespace Code.Gameplay.Features.Hero.Factory
 					.AddTargetLayerMask(CollisionLayer.Enemy.AsMask())
 					.AddRadius(config.AttackRange)
 					.AddCooldown(config.AttackCooldown)
+					.AddCoins(0)
 					.With(x => x.isHero = true)
 					.With(x => x.isMovementAvailable = true)
 					.With(x => x.isLinerMovement = true)

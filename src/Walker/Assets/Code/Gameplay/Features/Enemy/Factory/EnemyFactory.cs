@@ -31,10 +31,8 @@ namespace Code.Gameplay.Features.Enemy
 			throw new Exception($"Enemy with type id {typeId} does not exist");
 		}
 
-		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at)
-		{
-			return CreateEnemyEntity(typeId, at);
-		}
+		private GameEntity CreateOrc(EnemyTypeId typeId, Vector3 at) => 
+			CreateEnemyEntity(typeId, at);
 
 		private GameEntity CreateEnemyEntity(EnemyTypeId typeId, Vector3 at)
 		{
@@ -56,6 +54,7 @@ namespace Code.Gameplay.Features.Enemy
 					.AddBaseStats(baseStats)
 					.AddStatModifiers(InitStats.EmptyStatDictionary())
 					.AddViewPrefab(config.ViewPrefab)
+					.AddEnemyValue(config.Value)
 					.With(x => x.isEnemy = true)
 				;
 		}

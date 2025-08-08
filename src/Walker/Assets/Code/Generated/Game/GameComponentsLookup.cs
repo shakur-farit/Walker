@@ -43,52 +43,65 @@ public static class GameComponentsLookup {
     public const int AmmoTypeId = 32;
     public const int Enemy = 33;
     public const int EnemyAmmo = 34;
-    public const int EnemyTypeId = 35;
-    public const int HeroAmmo = 36;
-    public const int RotationAngle = 37;
-    public const int Shooting = 38;
-    public const int ClosestEnemyPosition = 39;
-    public const int FirePositionPoint = 40;
-    public const int Hero = 41;
-    public const int HeroTypeId = 42;
-    public const int WeaponRotationPoint = 43;
-    public const int EnemiesInLevelCount = 44;
-    public const int EnemiesInWaveCount = 45;
-    public const int EnemyAbsent = 46;
-    public const int EnemyWave = 47;
-    public const int EnemyWaves = 48;
-    public const int HeroAbsent = 49;
-    public const int HeroSafeZoneRadius = 50;
-    public const int Level = 51;
-    public const int LevelTypeId = 52;
-    public const int NextWaveIndex = 53;
-    public const int SpawnedEnemyWaves = 54;
-    public const int CurrentHp = 55;
-    public const int Dead = 56;
-    public const int MaxHp = 57;
-    public const int ProcessingDeath = 58;
-    public const int Direction = 59;
-    public const int LinerMovement = 60;
-    public const int MovementAvailable = 61;
-    public const int Moving = 62;
-    public const int OrbitalMovement = 63;
-    public const int OrbitAngularSpeed = 64;
-    public const int OrbitCenter = 65;
-    public const int OrbitElapsedTime = 66;
-    public const int OrbitInitialAngle = 67;
-    public const int OrbitRadius = 68;
-    public const int Speed = 69;
-    public const int CollectTargetsContinuously = 70;
-    public const int CollectTargetsInterval = 71;
-    public const int CollectTargetsTimer = 72;
-    public const int ProcessedTargets = 73;
-    public const int Radius = 74;
-    public const int ReadyToCollectTargets = 75;
-    public const int TargetLayerMask = 76;
-    public const int TargetLimit = 77;
-    public const int TargetsBuffer = 78;
+    public const int EnemyAnimator = 35;
+    public const int EnemyHpBar = 36;
+    public const int EnemyTypeId = 37;
+    public const int EnemyValue = 38;
+    public const int HeroAmmo = 39;
+    public const int RotationAngle = 40;
+    public const int Shooting = 41;
+    public const int ClosestEnemyPosition = 42;
+    public const int Coins = 43;
+    public const int CooldownUpgrade = 44;
+    public const int DamageUpgrade = 45;
+    public const int FirePositionPoint = 46;
+    public const int Hero = 47;
+    public const int HeroAnimator = 48;
+    public const int HeroTypeId = 49;
+    public const int HpUpgrade = 50;
+    public const int UpgradePrice = 51;
+    public const int UpgradeRequested = 52;
+    public const int UpgradeValue = 53;
+    public const int WeaponRotationPoint = 54;
+    public const int EnemiesInLevelCount = 55;
+    public const int EnemiesInWaveCount = 56;
+    public const int EnemyAbsent = 57;
+    public const int EnemyWave = 58;
+    public const int EnemyWaves = 59;
+    public const int HeroAbsent = 60;
+    public const int HeroSafeZoneRadius = 61;
+    public const int Level = 62;
+    public const int LevelTypeId = 63;
+    public const int NextWaveIndex = 64;
+    public const int SpawnedEnemyWaves = 65;
+    public const int CurrentHp = 66;
+    public const int Dead = 67;
+    public const int MaxHp = 68;
+    public const int ProcessingDeath = 69;
+    public const int Direction = 70;
+    public const int LinerMovement = 71;
+    public const int MovementAvailable = 72;
+    public const int Moving = 73;
+    public const int OrbitalMovement = 74;
+    public const int OrbitAngularSpeed = 75;
+    public const int OrbitCenter = 76;
+    public const int OrbitElapsedTime = 77;
+    public const int OrbitInitialAngle = 78;
+    public const int OrbitRadius = 79;
+    public const int Speed = 80;
+    public const int CollectTargetsContinuously = 81;
+    public const int CollectTargetsInterval = 82;
+    public const int CollectTargetsTimer = 83;
+    public const int ProcessedTargets = 84;
+    public const int Radius = 85;
+    public const int ReadyToCollectTargets = 86;
+    public const int TargetLayerMask = 87;
+    public const int TargetLimit = 88;
+    public const int TargetsBuffer = 89;
+    public const int CoinsHolder = 90;
+    public const int HeartHolder = 91;
 
-    public const int TotalComponents = 79;
+    public const int TotalComponents = 92;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -126,14 +139,25 @@ public static class GameComponentsLookup {
         "AmmoTypeId",
         "Enemy",
         "EnemyAmmo",
+        "EnemyAnimator",
+        "EnemyHpBar",
         "EnemyTypeId",
+        "EnemyValue",
         "HeroAmmo",
         "RotationAngle",
         "Shooting",
         "ClosestEnemyPosition",
+        "Coins",
+        "CooldownUpgrade",
+        "DamageUpgrade",
         "FirePositionPoint",
         "Hero",
+        "HeroAnimator",
         "HeroTypeId",
+        "HpUpgrade",
+        "UpgradePrice",
+        "UpgradeRequested",
+        "UpgradeValue",
         "WeaponRotationPoint",
         "EnemiesInLevelCount",
         "EnemiesInWaveCount",
@@ -169,7 +193,9 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetLayerMask",
         "TargetLimit",
-        "TargetsBuffer"
+        "TargetsBuffer",
+        "CoinsHolder",
+        "HeartHolder"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -208,14 +234,25 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemy.AmmoTypeIdComponent),
         typeof(Code.Gameplay.Features.Enemy.Enemy),
         typeof(Code.Gameplay.Features.Enemy.EnemyAmmo),
+        typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyHpBarComponent),
         typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyValue),
         typeof(Code.Gameplay.Features.Enemy.HeroAmmo),
         typeof(Code.Gameplay.Features.Enemy.RotationAngle),
         typeof(Code.Gameplay.Features.Enemy.Shooting),
         typeof(Code.Gameplay.Features.Hero.ClosestEnemyPosition),
+        typeof(Code.Gameplay.Features.Hero.Coins),
+        typeof(Code.Gameplay.Features.Hero.CooldownUpgrade),
+        typeof(Code.Gameplay.Features.Hero.DamageUpgrade),
         typeof(Code.Gameplay.Features.Hero.FirePositionPoint),
         typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
         typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent),
+        typeof(Code.Gameplay.Features.Hero.HpUpgrade),
+        typeof(Code.Gameplay.Features.Hero.UpgradePrice),
+        typeof(Code.Gameplay.Features.Hero.UpgradeRequested),
+        typeof(Code.Gameplay.Features.Hero.UpgradeValue),
         typeof(Code.Gameplay.Features.Hero.WeaponRotationPoint),
         typeof(Code.Gameplay.Features.Level.EnemiesInLevelCount),
         typeof(Code.Gameplay.Features.Level.EnemiesInWaveCount),
@@ -251,6 +288,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetLayerMask),
         typeof(Code.Gameplay.Features.TargetCollection.TargetLimit),
-        typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer)
+        typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
+        typeof(Code.Meta.Features.Hud.CoinsHolderComponent),
+        typeof(Code.Meta.Features.Hud.HeartHolderComponent)
     };
 }

@@ -7,5 +7,6 @@
 		MainMenuWindow = 2,
 		LevelCompleteWindow = 3,
 		GameOverWindow = 4,
+		ShopWindow = 5,
 	}
 }

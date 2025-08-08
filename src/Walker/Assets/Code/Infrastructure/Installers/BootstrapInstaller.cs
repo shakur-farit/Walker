@@ -19,6 +19,7 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
+using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -109,6 +110,7 @@ namespace Code.Infrastructure.Installers
 		private void BindUIFactories()
 		{
 			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
