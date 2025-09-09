@@ -15,9 +15,6 @@ namespace Code.Gameplay.Cameras.Provider
 			RefreshBoundaries();
 		}
 
-		public void SetCameraSize(float size) => 
-			MainCamera.orthographicSize = size - 1;
-
 		private void RefreshBoundaries()
 		{
 			Vector2 bottomLeft = MainCamera.ViewportToWorldPoint(new Vector3(0, 0, MainCamera.nearClipPlane));

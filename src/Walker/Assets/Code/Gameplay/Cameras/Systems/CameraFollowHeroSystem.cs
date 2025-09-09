@@ -14,14 +14,14 @@ namespace Code.Gameplay.Cameras.Systems
 			_cameraProvider = cameraProvider;
 			_heroes = game.GetGroup(GameMatcher
 				.AllOf(
-					//GameMatcher.Hero,
+					GameMatcher.Hero,
 					GameMatcher.WorldPosition));
 		}
 
 		public void Execute()
 		{
 			foreach (GameEntity hero in _heroes)
-				_cameraProvider.MainCamera.transform.SetWorldXY(hero.WorldPosition.x, hero.WorldPosition.y);
+				_cameraProvider.MainCamera.transform.SetWorldXY(hero.WorldPosition.x + 3, hero.WorldPosition.y);
 		}
 	}
 }

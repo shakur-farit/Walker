@@ -1,8 +1,14 @@
+using Code.Common.EntityIndices;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features;
+using Code.Gameplay.Features.Effects.Factory;
+using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Level.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
@@ -13,6 +19,7 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
+using Code.Meta.Features.Hud.HeroHeartHolder.Factory;
 using Code.Meta.UI.Windows.Factory;
 using Code.Meta.UI.Windows.Service;
 using Code.Progress.Provider;
@@ -38,6 +45,7 @@ namespace Code.Infrastructure.Installers
 			BindUIFactories();
 			BindUIServices();
 			BindCameraProvider();
+			BindEntityIndices();
 			BindProgressServices();
 		}
 
@@ -92,11 +100,17 @@ namespace Code.Infrastructure.Installers
 		private void BindGameplayFactories()
 		{
 			Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+			Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
+			Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+			Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+			Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
+			Container.Bind<IAmmoFactory>().To<AmmoFactory>().AsSingle();
 		}
 
 		private void BindUIFactories()
 		{
 			Container.Bind<IWindowFactory>().To<WindowFactory>().AsSingle();
+			Container.Bind<IHeartUIFactory>().To<HeartUIFactory>().AsSingle();
 		}
 
 		private void BindUIServices()
@@ -132,6 +146,11 @@ namespace Code.Infrastructure.Installers
 		private void BindInputService()
 		{
 			Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
+		}
+
+		public void BindEntityIndices()
+		{
+			Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
 		}
 
 		public void Initialize()

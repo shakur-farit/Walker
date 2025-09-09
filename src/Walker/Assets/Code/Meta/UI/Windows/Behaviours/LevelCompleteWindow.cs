@@ -1,8 +1,5 @@
 ﻿using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
-using Code.Meta.UI.Windows.Service;
-using Code.Progress.Provider;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -11,8 +8,8 @@ namespace Code.Meta.UI.Windows.Behaviours
 {
 	public class LevelCompleteWindow : BaseWindow
 	{
-		[SerializeField] private Button _nextLevelButton;
-
+		[SerializeField] private Button _restartButton;
+		[SerializeField] private Button _quitButton;
 
 		private IGameStateMachine _stateMachine;
 
@@ -26,10 +23,20 @@ namespace Code.Meta.UI.Windows.Behaviours
 
 		protected override void Initialize()
 		{
-			_nextLevelButton.onClick.AddListener(EnterToBattle);
+			_restartButton.onClick.AddListener(EnterToBattle);
+			_quitButton.onClick.AddListener(Quit);
 		}
 
 		private void EnterToBattle() =>
 			_stateMachine.Enter<BattleEnterState>();
+
+		private void Quit()
+		{
+#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
+		}
 	}
 }

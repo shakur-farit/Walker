@@ -26,12 +26,89 @@ public static class GameComponentsLookup {
     public const int Stunned = 15;
     public const int Transform = 16;
     public const int WorldPosition = 17;
-    public const int CurrentHp = 18;
-    public const int Dead = 19;
-    public const int MaxHp = 20;
-    public const int ProcessingDeath = 21;
+    public const int BaseStats = 18;
+    public const int StatChange = 19;
+    public const int StatModifiers = 20;
+    public const int Cooldown = 21;
+    public const int CooldownLeft = 22;
+    public const int CooldownUp = 23;
+    public const int DamageEffect = 24;
+    public const int Effect = 25;
+    public const int EffectSetups = 26;
+    public const int EffectValue = 27;
+    public const int HealEffect = 28;
+    public const int ProducerId = 29;
+    public const int TargetId = 30;
+    public const int Ammo = 31;
+    public const int AmmoTypeId = 32;
+    public const int Enemy = 33;
+    public const int EnemyAmmo = 34;
+    public const int EnemyAnimator = 35;
+    public const int EnemyHpBar = 36;
+    public const int EnemyTypeId = 37;
+    public const int EnemyValue = 38;
+    public const int HeroAmmo = 39;
+    public const int RotationAngle = 40;
+    public const int Shooting = 41;
+    public const int ShootingRange = 42;
+    public const int ClosestEnemyPosition = 43;
+    public const int Coins = 44;
+    public const int CooldownUpgrade = 45;
+    public const int DamageUpgrade = 46;
+    public const int FirePositionPoint = 47;
+    public const int Hero = 48;
+    public const int HeroAnimator = 49;
+    public const int HeroTypeId = 50;
+    public const int HpUpgrade = 51;
+    public const int UpgradePrice = 52;
+    public const int UpgradeRequested = 53;
+    public const int UpgradeValue = 54;
+    public const int WeaponRotationPoint = 55;
+    public const int EnemiesInLevelCount = 56;
+    public const int EnemiesInWaveCount = 57;
+    public const int EnemyAbsent = 58;
+    public const int EnemyWave = 59;
+    public const int EnemyWaves = 60;
+    public const int HeroAbsent = 61;
+    public const int HeroSafeZoneRadius = 62;
+    public const int Level = 63;
+    public const int LevelTypeId = 64;
+    public const int NextWaveIndex = 65;
+    public const int SpawnedEnemyWaves = 66;
+    public const int CurrentHp = 67;
+    public const int Dead = 68;
+    public const int MaxHp = 69;
+    public const int ProcessingDeath = 70;
+    public const int ArcElapsedTime = 71;
+    public const int ArcHeight = 72;
+    public const int ArcMovement = 73;
+    public const int Direction = 74;
+    public const int LinerMovement = 75;
+    public const int MovementAvailable = 76;
+    public const int MovementRange = 77;
+    public const int Moving = 78;
+    public const int OrbitalMovement = 79;
+    public const int OrbitAngularSpeed = 80;
+    public const int OrbitCenter = 81;
+    public const int OrbitElapsedTime = 82;
+    public const int OrbitInitialAngle = 83;
+    public const int OrbitRadius = 84;
+    public const int Speed = 85;
+    public const int StartPosition = 86;
+    public const int TargetPosition = 87;
+    public const int CollectTargetsContinuously = 88;
+    public const int CollectTargetsInterval = 89;
+    public const int CollectTargetsTimer = 90;
+    public const int ProcessedTargets = 91;
+    public const int Radius = 92;
+    public const int ReadyToCollectTargets = 93;
+    public const int TargetLayerMask = 94;
+    public const int TargetLimit = 95;
+    public const int TargetsBuffer = 96;
+    public const int CoinsHolder = 97;
+    public const int HeartHolder = 98;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 99;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -52,10 +129,87 @@ public static class GameComponentsLookup {
         "Stunned",
         "Transform",
         "WorldPosition",
+        "BaseStats",
+        "StatChange",
+        "StatModifiers",
+        "Cooldown",
+        "CooldownLeft",
+        "CooldownUp",
+        "DamageEffect",
+        "Effect",
+        "EffectSetups",
+        "EffectValue",
+        "HealEffect",
+        "ProducerId",
+        "TargetId",
+        "Ammo",
+        "AmmoTypeId",
+        "Enemy",
+        "EnemyAmmo",
+        "EnemyAnimator",
+        "EnemyHpBar",
+        "EnemyTypeId",
+        "EnemyValue",
+        "HeroAmmo",
+        "RotationAngle",
+        "Shooting",
+        "ShootingRange",
+        "ClosestEnemyPosition",
+        "Coins",
+        "CooldownUpgrade",
+        "DamageUpgrade",
+        "FirePositionPoint",
+        "Hero",
+        "HeroAnimator",
+        "HeroTypeId",
+        "HpUpgrade",
+        "UpgradePrice",
+        "UpgradeRequested",
+        "UpgradeValue",
+        "WeaponRotationPoint",
+        "EnemiesInLevelCount",
+        "EnemiesInWaveCount",
+        "EnemyAbsent",
+        "EnemyWave",
+        "EnemyWaves",
+        "HeroAbsent",
+        "HeroSafeZoneRadius",
+        "Level",
+        "LevelTypeId",
+        "NextWaveIndex",
+        "SpawnedEnemyWaves",
         "CurrentHp",
         "Dead",
         "MaxHp",
-        "ProcessingDeath"
+        "ProcessingDeath",
+        "ArcElapsedTime",
+        "ArcHeight",
+        "ArcMovement",
+        "Direction",
+        "LinerMovement",
+        "MovementAvailable",
+        "MovementRange",
+        "Moving",
+        "OrbitalMovement",
+        "OrbitAngularSpeed",
+        "OrbitCenter",
+        "OrbitElapsedTime",
+        "OrbitInitialAngle",
+        "OrbitRadius",
+        "Speed",
+        "StartPosition",
+        "TargetPosition",
+        "CollectTargetsContinuously",
+        "CollectTargetsInterval",
+        "CollectTargetsTimer",
+        "ProcessedTargets",
+        "Radius",
+        "ReadyToCollectTargets",
+        "TargetLayerMask",
+        "TargetLimit",
+        "TargetsBuffer",
+        "CoinsHolder",
+        "HeartHolder"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -77,9 +231,86 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Stunned),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
+        typeof(Code.Gameplay.Features.CharacterStats.StatChange),
+        typeof(Code.Gameplay.Features.CharacterStats.StatModifiers),
+        typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Effects.DamageEffect),
+        typeof(Code.Gameplay.Features.Effects.Effect),
+        typeof(Code.Gameplay.Features.Effects.EffectSetups),
+        typeof(Code.Gameplay.Features.Effects.EffectValue),
+        typeof(Code.Gameplay.Features.Effects.HealEffect),
+        typeof(Code.Gameplay.Features.Effects.ProducerId),
+        typeof(Code.Gameplay.Features.Effects.TargetId),
+        typeof(Code.Gameplay.Features.Enemy.Ammo),
+        typeof(Code.Gameplay.Features.Enemy.AmmoTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.Enemy),
+        typeof(Code.Gameplay.Features.Enemy.EnemyAmmo),
+        typeof(Code.Gameplay.Features.Enemy.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyHpBarComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyValue),
+        typeof(Code.Gameplay.Features.Enemy.HeroAmmo),
+        typeof(Code.Gameplay.Features.Enemy.RotationAngle),
+        typeof(Code.Gameplay.Features.Enemy.Shooting),
+        typeof(Code.Gameplay.Features.Enemy.ShootingRange),
+        typeof(Code.Gameplay.Features.Hero.ClosestEnemyPosition),
+        typeof(Code.Gameplay.Features.Hero.Coins),
+        typeof(Code.Gameplay.Features.Hero.CooldownUpgrade),
+        typeof(Code.Gameplay.Features.Hero.DamageUpgrade),
+        typeof(Code.Gameplay.Features.Hero.FirePositionPoint),
+        typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Hero.HeroAnimatorComponent),
+        typeof(Code.Gameplay.Features.Hero.HeroTypeIdComponent),
+        typeof(Code.Gameplay.Features.Hero.HpUpgrade),
+        typeof(Code.Gameplay.Features.Hero.UpgradePrice),
+        typeof(Code.Gameplay.Features.Hero.UpgradeRequested),
+        typeof(Code.Gameplay.Features.Hero.UpgradeValue),
+        typeof(Code.Gameplay.Features.Hero.WeaponRotationPoint),
+        typeof(Code.Gameplay.Features.Level.EnemiesInLevelCount),
+        typeof(Code.Gameplay.Features.Level.EnemiesInWaveCount),
+        typeof(Code.Gameplay.Features.Level.EnemyAbsent),
+        typeof(Code.Gameplay.Features.Level.EnemyWaveComponent),
+        typeof(Code.Gameplay.Features.Level.EnemyWaves),
+        typeof(Code.Gameplay.Features.Level.HeroAbsent),
+        typeof(Code.Gameplay.Features.Level.HeroSafeZoneRadius),
+        typeof(Code.Gameplay.Features.Level.Level),
+        typeof(Code.Gameplay.Features.Level.LevelTypeIdComponent),
+        typeof(Code.Gameplay.Features.Level.NextWaveIndex),
+        typeof(Code.Gameplay.Features.Level.SpawnedEnemyWaves),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
-        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath)
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Movement.ArcElapsedTime),
+        typeof(Code.Gameplay.Features.Movement.ArcHeight),
+        typeof(Code.Gameplay.Features.Movement.ArcMovement),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.LinerMovement),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.MovementRange),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.OrbitalMovement),
+        typeof(Code.Gameplay.Features.Movement.OrbitAngularSpeed),
+        typeof(Code.Gameplay.Features.Movement.OrbitCenter),
+        typeof(Code.Gameplay.Features.Movement.OrbitElapsedTime),
+        typeof(Code.Gameplay.Features.Movement.OrbitInitialAngle),
+        typeof(Code.Gameplay.Features.Movement.OrbitRadius),
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.StartPosition),
+        typeof(Code.Gameplay.Features.Movement.TargetPosition),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsContinuously),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.Radius),
+        typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetLayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetLimit),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
+        typeof(Code.Meta.Features.Hud.CoinsHolderComponent),
+        typeof(Code.Meta.Features.Hud.HeartHolderComponent)
     };
 }
